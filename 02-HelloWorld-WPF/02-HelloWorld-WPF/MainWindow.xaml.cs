@@ -38,7 +38,7 @@ namespace _02_HelloWorld_WPF
 
             if (String.IsNullOrWhiteSpace(nombre))
             {
-                MessageBox.Show ("No dejes el nombre vacío, crack.", "FATAL ERROR SYSTEM WILL CRASH.", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show ("OH NO YOU FUCKED UP", "FATAL ERROR SYSTEM WILL CRASH.", MessageBoxButton.OK, MessageBoxImage.Error);
             }
 
             else
