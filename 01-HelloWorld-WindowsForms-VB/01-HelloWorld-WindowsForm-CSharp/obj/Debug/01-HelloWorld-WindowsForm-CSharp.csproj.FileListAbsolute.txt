@@ -1,0 +1,10 @@
+D:\agomez\Desarrollo de Interfaces\Ejercicios\1º Trimestre\Visual Studio\01-HelloWorld-WindowsForms-VB\01-HelloWorld-WindowsForm-CSharp\bin\Debug\01-HelloWorld-WindowsForm-CSharp.exe.config
+D:\agomez\Desarrollo de Interfaces\Ejercicios\1º Trimestre\Visual Studio\01-HelloWorld-WindowsForms-VB\01-HelloWorld-WindowsForm-CSharp\bin\Debug\01-HelloWorld-WindowsForm-CSharp.exe
+D:\agomez\Desarrollo de Interfaces\Ejercicios\1º Trimestre\Visual Studio\01-HelloWorld-WindowsForms-VB\01-HelloWorld-WindowsForm-CSharp\bin\Debug\01-HelloWorld-WindowsForm-CSharp.pdb
+D:\agomez\Desarrollo de Interfaces\Ejercicios\1º Trimestre\Visual Studio\01-HelloWorld-WindowsForms-VB\01-HelloWorld-WindowsForm-CSharp\obj\Debug\01-HelloWorld-WindowsForm-CSharp.csprojResolveAssemblyReference.cache
+D:\agomez\Desarrollo de Interfaces\Ejercicios\1º Trimestre\Visual Studio\01-HelloWorld-WindowsForms-VB\01-HelloWorld-WindowsForm-CSharp\obj\Debug\_01_HelloWorld_WindowsForm_CSharp.Form1.resources
+D:\agomez\Desarrollo de Interfaces\Ejercicios\1º Trimestre\Visual Studio\01-HelloWorld-WindowsForms-VB\01-HelloWorld-WindowsForm-CSharp\obj\Debug\_01_HelloWorld_WindowsForm_CSharp.Properties.Resources.resources
+D:\agomez\Desarrollo de Interfaces\Ejercicios\1º Trimestre\Visual Studio\01-HelloWorld-WindowsForms-VB\01-HelloWorld-WindowsForm-CSharp\obj\Debug\01-HelloWorld-WindowsForm-CSharp.csproj.GenerateResource.Cache
+D:\agomez\Desarrollo de Interfaces\Ejercicios\1º Trimestre\Visual Studio\01-HelloWorld-WindowsForms-VB\01-HelloWorld-WindowsForm-CSharp\obj\Debug\01-HelloWorld-WindowsForm-CSharp.csproj.CoreCompileInputs.cache
+D:\agomez\Desarrollo de Interfaces\Ejercicios\1º Trimestre\Visual Studio\01-HelloWorld-WindowsForms-VB\01-HelloWorld-WindowsForm-CSharp\obj\Debug\01-HelloWorld-WindowsForm-CSharp.exe
+D:\agomez\Desarrollo de Interfaces\Ejercicios\1º Trimestre\Visual Studio\01-HelloWorld-WindowsForms-VB\01-HelloWorld-WindowsForm-CSharp\obj\Debug\01-HelloWorld-WindowsForm-CSharp.pdb
