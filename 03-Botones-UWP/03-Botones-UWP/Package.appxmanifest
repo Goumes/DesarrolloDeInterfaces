@@ -14,7 +14,7 @@
   <mp:PhoneIdentity PhoneProductId="2a0b5e94-d803-49f5-b2dc-4e14172d85f3" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
-    <DisplayName>02-Botones-Universal</DisplayName>
+    <DisplayName>03-Botones-UWP</DisplayName>
     <PublisherDisplayName>agomez</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>

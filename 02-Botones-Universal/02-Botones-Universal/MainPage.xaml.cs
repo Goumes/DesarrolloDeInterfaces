@@ -42,7 +42,20 @@ namespace _02_Botones_Universal
             boton3.FontWeight = FontWeights.Bold;
             boton3.FontFamily = new FontFamily("Verdana");
             boton3.BorderBrush = new SolidColorBrush(Windows.UI.Colors.Yellow);
+
+            boton3.Click += boton3_Click;
             stack.Children.Add(boton3);
+        }
+
+        /// <summary>
+        ///  Metodo que imprime en mensaje al hacer click en el botón 3.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void boton3_Click(object sender, RoutedEventArgs e)
+        {
+            //To do
+            this.btn1.Content = "Ey";
         }
     }
 }
