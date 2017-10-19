@@ -1,4 +1,5 @@
-﻿using System;
+﻿using _07_Grid_UWP.Models;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -35,6 +36,9 @@ namespace _07_Grid_UWP
             TextBlock txtBlock1 = (TextBlock) this.txtBlock1;
             TextBlock txtBlock2 = (TextBlock)this.txtBlock2;
             TextBlock txtBlock3 = (TextBlock)this.txtBlock3;
+
+            clsPersona persona = new clsPersona();
+            persona = (clsPersona) this.DataContext;
 
             if (String.IsNullOrWhiteSpace(txtBox1.Text))
             {
