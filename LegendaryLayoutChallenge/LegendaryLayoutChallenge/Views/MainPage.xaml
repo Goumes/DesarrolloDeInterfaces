@@ -18,7 +18,7 @@
             <TextBlock x:Name="txb2" MaxWidth="500" Margin="10, 10, 20, 10" TextWrapping="Wrap"
                        Text="Mauris vitae tristique nisl. Donec tempor consectetur turpis eget efficitur. Praesent tempor velit at leo condimentum, sit amet scelerisque risus mattis. Ut vel odio aliquet, ultrices magna ac, tristique quam. Morbi ac ligula dui. In hac habitasse platea dictumst. Sed tempor mi nec luctus posuere. Vestibulum eros purus, pharetra a scelerisque vel, finibus et mi. Sed ut tellus nisl. Ut ullamcorper finibus feugiat. Aenean viverra mattis auctor. In vel ultricies eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ac rhoncus mi. Donec sapien nisi, volutpat sed mi ac, suscipit varius arcu. In pellentesque metus ut est faucibus mollis. Etiam lacinia mauris diam, vitae aliquet eros volutpat ut. Vestibulum non auctor tortor, non accumsan ante. Mauris porta at nulla vitae posuere. Nullam elementum odio non diam malesuada malesuada. Aliquam viverra pharetra molestie. Proin rutrum nibh nec tortor luctus, sagittis pellentesque ante aliquam. Fusce dictum turpis eu dui mattis sodales ultrices sit amet nisi. "/>
             
-            <StackPanel x:Name="stkPanel3" Orientation="Horizontal" MinWidth="300">
+            <StackPanel x:Name="stkPanel3" Orientation="Horizontal" MinWidth="300" Margin="20">
                 
                 <Rectangle MinWidth="200" MinHeight="200" Fill="Blue" VerticalAlignment="Top"/>
                 

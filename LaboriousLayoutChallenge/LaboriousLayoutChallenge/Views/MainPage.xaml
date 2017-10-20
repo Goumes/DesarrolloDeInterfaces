@@ -6,7 +6,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
-
+    <ScrollViewer>
     <StackPanel x:Name="stkPanelPrincipal" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Width="500">
         <Grid Margin="10, 10, 20, 10">
             <Grid.ColumnDefinitions>
@@ -49,7 +49,7 @@
                 <Rectangle Fill="Blue" MinWidth="100" MinHeight="30"/>
             </StackPanel>
 
-            <TextBlock x:Name="txbTitulo3" Text="Title 2" FontSize="24" Margin="10, 10, 20, 10" Grid.Row="6" Grid.Column="0"/>
+            <TextBlock x:Name="txbTitulo3" Text="Title 3" FontSize="24" Margin="10, 10, 20, 10" Grid.Row="6" Grid.Column="0"/>
             <TextBlock x:Name="txbContent3" Text="Lorem ipsum dolor sit amet, consecteur adipiscing elit. Ut luctus, mi nec fermentum congue, turpis nibh porttitor ex, sed commodo neque eros non libero. Donec mauris felis, malesuada nec consecteur et, pharetra in ante. Praesent nec hendrerit purus. Ut vel nunc id nisl volutpat porta. Cras in convallis ipsum. Integer id sollicitudin ex. Ut sed iaculis nisl."
                        TextWrapping="Wrap" Grid.Row="7" Grid.Column="1" Margin="20, 10, 20, 0"/>
 
@@ -60,4 +60,5 @@
             </StackPanel>
         </Grid>
     </StackPanel>
+    </ScrollViewer>
 </Page>
