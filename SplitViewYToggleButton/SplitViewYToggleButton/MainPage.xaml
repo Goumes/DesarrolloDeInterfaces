@@ -1,0 +1,46 @@
+﻿<Page
+    x:Class="SplitViewYToggleButton.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SplitViewYToggleButton"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <StackPanel Orientation="Vertical">
+            <ToggleButton Name="HamburguerButton" ClickMode="Press" FontFamily="Segoe MDL2 Assets" Content="&#xE700;" MinHeight="50" MinWidth="50" Click="HamburguerButton_Click" />
+            <SplitView VerticalAlignment="Top" Name="splitview" DisplayMode="CompactOverlay" HorizontalAlignment="Left" IsPaneOpen="False">
+                <SplitView.Pane>
+                    <StackPanel Orientation="Vertical">
+                        <StackPanel Orientation="Horizontal">
+                            <AppBarButton Width="50" Name="addFriend" Height="50" Foreground="Brown" Icon="AddFriend" Margin="0 0 20 0"/>
+                            <TextBlock Foreground="Brown" Text="Añadir Colega" Margin="0 15 0 0"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <AppBarButton Width="50" Name="musica"  Height="50" Icon="Audio" Foreground="Brown" Margin="0 0 20 0"/>
+                            <TextBlock Text="Música para cracks" Foreground="Brown" Margin="0 15 0 0"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <AppBarButton Width="50" Name="camara"  Height="50" Icon="Camera" Foreground="Brown" Margin="0 0 20 0"/>
+                            <TextBlock Foreground="Brown" Text="Cámara Nickon" Margin="0 15 0 0 "/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <AppBarButton Width="50" Name="caption" Height="50" Icon="Caption" Foreground="Brown" Margin="0 0 20 0"/>
+                            <TextBlock Text="Caption" Foreground="Brown" Margin="0 15 0 0"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <AppBarButton Width="50" Name="dockLeft" Height="50" Icon="DockLeft" Foreground="Brown" Margin="0 0 20 0"/>
+                            <TextBlock Text="DockLeft" Foreground="Brown" Margin="0 15 0 0"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <AppBarButton Width="50" Name="palante" Height="50" Icon="Forward" Foreground="Brown" Margin="0 0 20 0"/>
+                            <TextBlock Text="Palante" Foreground="Brown" Margin="0 15 0 0"/>
+                        </StackPanel>
+                    </StackPanel>
+                </SplitView.Pane>
+            </SplitView>
+        </StackPanel>
+    </Grid>
+</Page>
