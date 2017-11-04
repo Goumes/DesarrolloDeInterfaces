@@ -1,0 +1,54 @@
+﻿<Page
+    x:Class="_10_SolarizrPropio_UWP.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:_10_SolarizrPropio_UWP"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="10*"/>
+        </Grid.RowDefinitions>
+
+        <RelativePanel Grid.Row="0" VerticalAlignment="Center" Background="DeepSkyBlue">
+            <ToggleButton x:Name="toggle" Width="40" Height="40" FontFamily="Segoe MDL2 Assets" Content="&#xE700;" Margin="10" Background="DeepSkyBlue" Click="toggle_Click"/>
+            <TextBlock x:Name="Titulo" Text="SOLARIZR" FontSize="40dp" RelativePanel.RightOf="toggle" Margin="40, 0, 0, 0"/>
+        </RelativePanel>
+
+        <SplitView x:Name="miSplitView" Grid.Row="1" RelativePanel.LeftOf="Titulo" RelativePanel.AlignLeftWithPanel="True" DisplayMode="CompactOverlay"
+                       CompactPaneLength="0" OpenPaneLength="200">
+            <SplitView.Pane>
+                <Grid Background="LightSkyBlue">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="50"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button x:Name="btnCasas"  Background="Transparent" Grid.Row="0" HorizontalAlignment="Stretch" Click="clickBtn_Navegar">
+                        <RelativePanel x:Name="relativeCasas">
+                            <SymbolIcon x:Name="iconoCasas" Symbol="Home" Margin="10,10"/>
+                            <TextBlock RelativePanel.RightOf="iconoCasas" Text="Casas pendientes" FontSize = "18dp" RelativePanel.AlignVerticalCenterWith="iconoCasas"></TextBlock>
+                        </RelativePanel>
+                    </Button>
+
+                    <Button x:Name="btnUsers" Background="Transparent" Grid.Row="1" HorizontalAlignment="Stretch" Click="clickBtn_Navegar">
+                        <RelativePanel x:Name="relativeUsers">
+                            <SymbolIcon x:Name="iconoUser" Symbol="OtherUser" Margin="10,10"/>
+                            <TextBlock RelativePanel.RightOf="iconoUser" Text="Cambiar usuario" FontSize = "18dp" RelativePanel.AlignVerticalCenterWith="iconoUser"></TextBlock>
+                        </RelativePanel>
+                    </Button>
+                </Grid>
+            </SplitView.Pane>
+
+            <SplitView.Content>
+                <Frame x:Name="miFrame"/>
+            </SplitView.Content>
+
+        </SplitView>
+    </Grid>
+</Page>
