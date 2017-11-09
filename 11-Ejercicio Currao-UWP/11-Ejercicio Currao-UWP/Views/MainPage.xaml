@@ -19,8 +19,6 @@
                     <VisualState.StateTriggers>
                         <AdaptiveTrigger MinWindowWidth="800"/>
                     </VisualState.StateTriggers>
-                    <VisualState.Setters>
-                    </VisualState.Setters>
                 </VisualState>
                 <VisualState x:Name="Phone">
                     <VisualState.Setters>
@@ -28,6 +26,11 @@
                         <Setter Target="grid.(Grid.ColumnSpan)" Value="2"/>
                         <Setter Target="grid.(Grid.Row)" Value="1"/>
                         <Setter Target="grid.(Grid.Column)" Value="0"/>
+                        <Setter Target="textBlock.(TextBlock.FontSize)" Value="20"/>
+                        <Setter Target="textBlock1.(TextBlock.FontSize)" Value="20"/>
+                        <Setter Target="textBlock2.(TextBlock.FontSize)" Value="20"/>
+                        <Setter Target="textBlock3.(TextBlock.FontSize)" Value="20"/>
+                        <Setter Target="textBlock4.(TextBlock.FontSize)" Value="20"/>
                     </VisualState.Setters>
                     <VisualState.StateTriggers>
                         <AdaptiveTrigger MinWindowWidth="400"/>
@@ -42,7 +45,8 @@
 
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="auto"/>  <!-- Me sale un poco feo lo de la descripción porque he querido reciclar el Grid y no cambiarlo todo a Relative, pero cambiándolo saldría perfecto.  -->
+            <RowDefinition Height="auto"/>
+            <!-- Me sale un poco feo lo de la descripción porque he querido reciclar el Grid y no cambiarlo todo a Relative, pero cambiándolo saldría perfecto.  -->
         </Grid.RowDefinitions>
 
         <ScrollViewer x:Name="scrollViewer">
@@ -73,19 +77,19 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-            <TextBlock Text="Nombre:" FontSize="30" Grid.Row="0" Margin="10"/>
+            <TextBlock x:Name="textBlock" Text="Nombre:" FontSize="30" Grid.Row="0" Margin="10"/>
             <TextBox x:Name="txbNombre" Grid.Row="0" Grid.Column="1" Background="White" Margin="10" Text="{Binding nombre}"/>
 
-            <TextBlock Text="Apellidos:" FontSize="30" Grid.Row="1" Margin="10"/>
+            <TextBlock x:Name="textBlock1" Text="Apellidos:" FontSize="30" Grid.Row="1" Margin="10"/>
             <TextBox x:Name="txbApellidos" Grid.Row="1" Grid.Column="1" Background="White" Margin="10" Text="{Binding apellido1}"/>
 
-            <TextBlock Text="Fecha de Nacimiento:" FontSize="30" Grid.Row="2" Margin="10"/>
+            <TextBlock x:Name="textBlock2" Text="Fecha de Nacimiento:" FontSize="30" Grid.Row="2" Margin="10"/>
             <TextBox x:Name="txbFechaNacimiento" Grid.Row="2" Grid.Column="1" Background="White" Margin="10" Text="{Binding fechaNac}" />
 
-            <TextBlock Text="Telefono:" FontSize="30" Grid.Row="3" Margin="10"/>
+            <TextBlock x:Name="textBlock3" Text="Telefono:" FontSize="30" Grid.Row="3" Margin="10"/>
             <TextBox x:Name="txbTelefono" Grid.Row="3" Grid.Column="1" Background="White" Margin="10" Text ="{Binding telefono}"/>
 
-            <TextBlock Text="Direccion:" FontSize="30" Grid.Row="4" Margin="10"/>
+            <TextBlock x:Name="textBlock4" Text="Direccion:" FontSize="30" Grid.Row="4" Margin="10"/>
             <ScrollViewer Grid.Row="5" Grid.ColumnSpan="2">
                 <TextBox x:Name="txbDireccion" Grid.Row="4" Grid.Column="1" Background="White" Margin="10" Text ="{Binding direccion}"/>
             </ScrollViewer>
