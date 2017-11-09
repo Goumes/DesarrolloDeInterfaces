@@ -13,12 +13,39 @@
     </Page.DataContext>
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="VisualStateGroup">
+                <VisualState x:Name="Desktop">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="800"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="Phone">
+                    <VisualState.Setters>
+                        <Setter Target="scrollViewer.(Grid.ColumnSpan)" Value="2"/>
+                        <Setter Target="grid.(Grid.ColumnSpan)" Value="2"/>
+                        <Setter Target="grid.(Grid.Row)" Value="1"/>
+                        <Setter Target="grid.(Grid.Column)" Value="0"/>
+                    </VisualState.Setters>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="400"/>
+                    </VisualState.StateTriggers>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="2*"/>
         </Grid.ColumnDefinitions>
 
-        <ScrollViewer Grid.Column="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>  <!-- Me sale un poco feo lo de la descripción porque he querido reciclar el Grid y no cambiarlo todo a Relative, pero cambiándolo saldría perfecto.  -->
+        </Grid.RowDefinitions>
+
+        <ScrollViewer x:Name="scrollViewer">
             <ListView SelectedItem="{Binding personaSeleccionada, Mode=TwoWay}" Grid.Column="0" ItemsSource="{Binding listado}">
                 <ListView.ItemTemplate>
                     <DataTemplate x:DataType ="x:String">
@@ -31,7 +58,7 @@
             </ListView>
         </ScrollViewer>
 
-        <Grid Background="Beige" Grid.Column="1" DataContext="{Binding personaSeleccionada}">
+        <Grid x:Name="grid" Background="Beige" Grid.Column="1" DataContext="{Binding personaSeleccionada}">
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto"/>
