@@ -1,0 +1,84 @@
+﻿<Page
+    x:Class="_16_EjercicioStateManager_UWP.Views.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:_16_EjercicioStateManager_UWP"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <RelativePanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="VisualStateGroup">
+                <VisualState x:Name="Desktop">
+                    <VisualState.Setters>
+                        <Setter Target="grid.(RelativePanel.RightOf)" Value="stkPanel"/>
+                    </VisualState.Setters>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="800"/>
+                    </VisualState.StateTriggers>
+                </VisualState>
+                <VisualState x:Name="Phone">
+                    <VisualState.Setters>
+
+                        <Setter Target="grid.(RelativePanel.AlignBottomWithPanel)" Value="False"/>
+                        <Setter Target="grid.(RelativePanel.AlignTopWithPanel)" Value="False"/>
+                        <Setter Target="grid.(RelativePanel.AlignRightWithPanel)" Value="False"/>
+                        <Setter Target="grid.(RelativePanel.Below)" Value="stkPanel"/>
+                        <Setter Target="stkPanel.(FrameworkElement.MinHeight)" Value="0"/>
+                        <Setter Target="stkPanel.(FrameworkElement.MinWidth)" Value="1500"/>
+                        <Setter Target="stkPanel.(StackPanel.Orientation)" Value="Horizontal"/>
+                        <Setter Target="grid.(UIElement.Visibility)" Value="Visible"/>
+                        <Setter Target="column2.(ColumnDefinition.Width)" Value="0"/>
+                        <Setter Target="column3.(ColumnDefinition.Width)" Value="0"/>
+                        <Setter Target="row4.(ColumnDefinition.Height)" Value="*"/>
+
+
+                    </VisualState.Setters>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="200"/>
+                    </VisualState.StateTriggers>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+        <StackPanel x:Name="stkPanel" Orientation="Vertical" MinHeight="900" Background="LightBlue">
+            <AppBarButton Icon="Add" Label="Añadir"/>
+            <AppBarButton Icon="Go" Label="Ir"/>
+            <AppBarButton Icon="TouchPointer" Label="Objetivo"/>
+            <AppBarButton Icon="OtherUser" Label="addFriend"/>
+
+        </StackPanel>
+        <Grid x:Name="grid" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignTopWithPanel="True">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition x:Name="column1" Width="*"/>
+                <ColumnDefinition x:Name="column2" Width="*"/>
+                <ColumnDefinition x:Name="column3" Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition x:Name="row1" Height="*"/>
+                <RowDefinition x:Name="row2" Height="*"/>
+                <RowDefinition x:Name="row3" Height="*"/>
+                <RowDefinition x:Name="row4" Height="0"/>
+                <RowDefinition x:Name="row5" Height="0"/>
+                <RowDefinition x:Name="row6" Height="0"/>
+                <RowDefinition x:Name="row7" Height="0"/>
+                <RowDefinition x:Name="row8" Height="0"/>
+                <RowDefinition x:Name="row9" Height="0"/>
+            </Grid.RowDefinitions>
+
+            <Image Grid.Row="0" Grid.Column="0" Source="/Assets/Alcantarilla1.jpg" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Stretch="Fill"/>
+            <Image Grid.Row="1" Grid.Column="0" Source="/Assets/Alcantarilla2.jpg" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Stretch="Fill"/>
+            <Image Grid.Row="2" Grid.Column="0" Source="/Assets/Alcantarilla3.jpg" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Stretch="Fill"/>
+
+            <Image Grid.Row="0" Grid.Column="1" Source="/Assets/Alcantarilla3.jpg" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Stretch="Fill"/>
+            <Image Grid.Row="1" Grid.Column="1" Source="/Assets/Alcantarilla1.jpg" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Stretch="Fill"/>
+            <Image Grid.Row="2" Grid.Column="1" Source="/Assets/Alcantarilla2.jpg" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Stretch="Fill"/>
+
+            <Image Grid.Row="0" Grid.Column="3" Source="/Assets/Alcantarilla1.jpg" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Stretch="Fill"/>
+            <Image Grid.Row="1" Grid.Column="3" Source="/Assets/Alcantarilla2.jpg" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Stretch="Fill"/>
+            <Image Grid.Row="2" Grid.Column="3" Source="/Assets/Alcantarilla3.jpg" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Stretch="Fill"/>
+
+        </Grid>
+    </RelativePanel>
+</Page>

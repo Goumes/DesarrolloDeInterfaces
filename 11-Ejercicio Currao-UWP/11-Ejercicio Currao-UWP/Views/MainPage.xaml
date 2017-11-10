@@ -33,7 +33,7 @@
                         <Setter Target="textBlock4.(TextBlock.FontSize)" Value="20"/>
                     </VisualState.Setters>
                     <VisualState.StateTriggers>
-                        <AdaptiveTrigger MinWindowWidth="400"/>
+                        <AdaptiveTrigger MinWindowWidth="0"/>
                     </VisualState.StateTriggers>
                 </VisualState>
             </VisualStateGroup>
