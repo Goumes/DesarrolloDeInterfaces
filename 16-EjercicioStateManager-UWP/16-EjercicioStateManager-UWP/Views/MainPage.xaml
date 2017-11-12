@@ -12,7 +12,7 @@
             <VisualStateGroup x:Name="VisualStateGroup">
                 <VisualState x:Name="Desktop">
                     <VisualState.Setters>
-                        <Setter Target="grid.(RelativePanel.RightOf)" Value="stkPanel"/>
+                        <Setter Target="scrollV.(RelativePanel.RightOf)" Value="stkPanel"/>
                     </VisualState.Setters>
                     <VisualState.StateTriggers>
                         <AdaptiveTrigger MinWindowWidth="800"/>
@@ -21,17 +21,34 @@
                 <VisualState x:Name="Phone">
                     <VisualState.Setters>
 
-                        <Setter Target="grid.(RelativePanel.AlignBottomWithPanel)" Value="False"/>
-                        <Setter Target="grid.(RelativePanel.AlignTopWithPanel)" Value="False"/>
-                        <Setter Target="grid.(RelativePanel.AlignRightWithPanel)" Value="False"/>
-                        <Setter Target="grid.(RelativePanel.Below)" Value="stkPanel"/>
+                        <Setter Target="scrollV.(RelativePanel.AlignBottomWithPanel)" Value="False"/>
+                        <Setter Target="scrollV.(RelativePanel.AlignTopWithPanel)" Value="False"/>
+                        <Setter Target="scrollV.(RelativePanel.AlignRightWithPanel)" Value="False"/>
+                        <Setter Target="scrollV.(RelativePanel.Below)" Value="stkPanel"/>
                         <Setter Target="stkPanel.(FrameworkElement.MinHeight)" Value="0"/>
                         <Setter Target="stkPanel.(FrameworkElement.MinWidth)" Value="1500"/>
                         <Setter Target="stkPanel.(StackPanel.Orientation)" Value="Horizontal"/>
-                        <Setter Target="grid.(UIElement.Visibility)" Value="Visible"/>
+                        <Setter Target="scrollV.(UIElement.Visibility)" Value="Visible"/>
                         <Setter Target="column2.(ColumnDefinition.Width)" Value="0"/>
                         <Setter Target="column3.(ColumnDefinition.Width)" Value="0"/>
                         <Setter Target="row4.(ColumnDefinition.Height)" Value="*"/>
+                        <Setter Target="row5.(ColumnDefinition.Height)" Value="*"/>
+                        <Setter Target="row6.(ColumnDefinition.Height)" Value="*"/>
+                        <Setter Target="row7.(ColumnDefinition.Height)" Value="*"/>
+                        <Setter Target="row8.(ColumnDefinition.Height)" Value="*"/>
+                        <Setter Target="row9.(ColumnDefinition.Height)" Value="*"/>
+                        <Setter Target="image.(Grid.Column)" Value="0"/>
+                        <Setter Target="image.(Grid.Row)" Value="3"/>
+                        <Setter Target="image1.(Grid.Column)" Value="0"/>
+                        <Setter Target="image1.(Grid.Row)" Value="4"/>
+                        <Setter Target="image2.(Grid.Row)" Value="5"/>
+                        <Setter Target="image2.(Grid.Column)" Value="0"/>
+                        <Setter Target="image3.(Grid.Column)" Value="0"/>
+                        <Setter Target="image3.(Grid.Row)" Value="6"/>
+                        <Setter Target="image4.(Grid.Column)" Value="0"/>
+                        <Setter Target="image4.(Grid.Row)" Value="7"/>
+                        <Setter Target="image5.(Grid.Column)" Value="0"/>
+                        <Setter Target="image5.(Grid.Row)" Value="8"/>
 
 
                     </VisualState.Setters>
@@ -48,37 +65,39 @@
             <AppBarButton Icon="OtherUser" Label="addFriend"/>
 
         </StackPanel>
-        <Grid x:Name="grid" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignTopWithPanel="True">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition x:Name="column1" Width="*"/>
-                <ColumnDefinition x:Name="column2" Width="*"/>
-                <ColumnDefinition x:Name="column3" Width="*"/>
-            </Grid.ColumnDefinitions>
+        <ScrollViewer x:Name="scrollV" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignTopWithPanel="True">
+            <Grid x:Name="grid" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition x:Name="column1" Width="*"/>
+                    <ColumnDefinition x:Name="column2" Width="*"/>
+                    <ColumnDefinition x:Name="column3" Width="*"/>
+                </Grid.ColumnDefinitions>
 
-            <Grid.RowDefinitions>
-                <RowDefinition x:Name="row1" Height="*"/>
-                <RowDefinition x:Name="row2" Height="*"/>
-                <RowDefinition x:Name="row3" Height="*"/>
-                <RowDefinition x:Name="row4" Height="0"/>
-                <RowDefinition x:Name="row5" Height="0"/>
-                <RowDefinition x:Name="row6" Height="0"/>
-                <RowDefinition x:Name="row7" Height="0"/>
-                <RowDefinition x:Name="row8" Height="0"/>
-                <RowDefinition x:Name="row9" Height="0"/>
-            </Grid.RowDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition x:Name="row1" Height="*"/>
+                    <RowDefinition x:Name="row2" Height="*"/>
+                    <RowDefinition x:Name="row3" Height="*"/>
+                    <RowDefinition x:Name="row4" Height="0"/>
+                    <RowDefinition x:Name="row5" Height="0"/>
+                    <RowDefinition x:Name="row6" Height="0"/>
+                    <RowDefinition x:Name="row7" Height="0"/>
+                    <RowDefinition x:Name="row8" Height="0"/>
+                    <RowDefinition x:Name="row9" Height="0"/>
+                </Grid.RowDefinitions>
 
-            <Image Grid.Row="0" Grid.Column="0" Source="/Assets/Alcantarilla1.jpg" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Stretch="Fill"/>
-            <Image Grid.Row="1" Grid.Column="0" Source="/Assets/Alcantarilla2.jpg" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Stretch="Fill"/>
-            <Image Grid.Row="2" Grid.Column="0" Source="/Assets/Alcantarilla3.jpg" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Stretch="Fill"/>
+                <Image Grid.Row="0" Grid.Column="0" Source="/Assets/Alcantarilla1.jpg" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Stretch="Fill"/>
+                <Image Grid.Row="1" Grid.Column="0" Source="/Assets/Alcantarilla2.jpg" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Stretch="Fill"/>
+                <Image Grid.Row="2" Grid.Column="0" Source="/Assets/Alcantarilla3.jpg" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Stretch="Fill"/>
 
-            <Image Grid.Row="0" Grid.Column="1" Source="/Assets/Alcantarilla3.jpg" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Stretch="Fill"/>
-            <Image Grid.Row="1" Grid.Column="1" Source="/Assets/Alcantarilla1.jpg" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Stretch="Fill"/>
-            <Image Grid.Row="2" Grid.Column="1" Source="/Assets/Alcantarilla2.jpg" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Stretch="Fill"/>
+                <Image x:Name="image" Grid.Row="0" Grid.Column="1" Source="/Assets/Alcantarilla3.jpg" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Stretch="Fill"/>
+                <Image x:Name="image1" Grid.Row="1" Grid.Column="1" Source="/Assets/Alcantarilla1.jpg" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Stretch="Fill"/>
+                <Image x:Name="image2" Grid.Row="2" Grid.Column="1" Source="/Assets/Alcantarilla2.jpg" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Stretch="Fill"/>
 
-            <Image Grid.Row="0" Grid.Column="3" Source="/Assets/Alcantarilla1.jpg" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Stretch="Fill"/>
-            <Image Grid.Row="1" Grid.Column="3" Source="/Assets/Alcantarilla2.jpg" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Stretch="Fill"/>
-            <Image Grid.Row="2" Grid.Column="3" Source="/Assets/Alcantarilla3.jpg" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Stretch="Fill"/>
+                <Image x:Name="image3" Grid.Row="0" Grid.Column="3" Source="/Assets/Alcantarilla1.jpg" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Stretch="Fill"/>
+                <Image x:Name="image4" Grid.Row="1" Grid.Column="3" Source="/Assets/Alcantarilla2.jpg" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Stretch="Fill"/>
+                <Image x:Name="image5" Grid.Row="2" Grid.Column="3" Source="/Assets/Alcantarilla3.jpg" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Stretch="Fill"/>
 
-        </Grid>
+            </Grid>
+        </ScrollViewer>
     </RelativePanel>
 </Page>
