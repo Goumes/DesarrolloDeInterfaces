@@ -26,5 +26,19 @@ namespace _11_Ejercicio_Currao_UWP.Views
         {
             this.InitializeComponent();
         }
+
+        /// <summary>
+        /// Metodo dedicado a actualizar el binding de las propiedades de los atributos del grid
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_Click(object sender, RoutedEventArgs e)
+        {
+            this.txbNombre.GetBindingExpression(TextBox.TextProperty).UpdateSource();
+            this.txbApellidos.GetBindingExpression(TextBox.TextProperty).UpdateSource();
+            this.txbFechaNacimiento.GetBindingExpression(TextBox.TextProperty).UpdateSource();
+            this.txbTelefono.GetBindingExpression(TextBox.TextProperty).UpdateSource();
+            this.txbDireccion.GetBindingExpression(TextBox.TextProperty).UpdateSource();
+        }
     }
 }

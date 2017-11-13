@@ -54,8 +54,8 @@
                 <ListView.ItemTemplate>
                     <DataTemplate x:DataType ="x:String">
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="{Binding Path=nombre}"></TextBlock>
-                            <TextBlock Text="{Binding Path=apellido1}" Margin="10,0,0,0"></TextBlock>
+                            <TextBlock Text="{Binding Path=_nombre }"></TextBlock>
+                            <TextBlock Text="{Binding Path=_apellido1}" Margin="10,0,0,0"></TextBlock>
                         </StackPanel>
                     </DataTemplate>
                 </ListView.ItemTemplate>
@@ -69,6 +69,7 @@
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
@@ -77,21 +78,23 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-            <TextBlock x:Name="textBlock" Text="Nombre:" FontSize="30" Grid.Row="0" Margin="10"/>
-            <TextBox x:Name="txbNombre" Grid.Row="0" Grid.Column="1" Background="White" Margin="10" Text="{Binding nombre}"/>
+            <AppBarButton x:Name ="btn" Icon="Save" Click="btn_Click"/>
 
-            <TextBlock x:Name="textBlock1" Text="Apellidos:" FontSize="30" Grid.Row="1" Margin="10"/>
-            <TextBox x:Name="txbApellidos" Grid.Row="1" Grid.Column="1" Background="White" Margin="10" Text="{Binding apellido1}"/>
+            <TextBlock x:Name="textBlock" Text="Nombre:" FontSize="30" Grid.Row="1" Margin="10"/>
+            <TextBox x:Name="txbNombre" Grid.Row="1" Grid.Column="1" Background="White" Margin="10" Text="{Binding _nombre, Mode=TwoWay, UpdateSourceTrigger=Explicit}"/>
 
-            <TextBlock x:Name="textBlock2" Text="Fecha de Nacimiento:" FontSize="30" Grid.Row="2" Margin="10"/>
-            <TextBox x:Name="txbFechaNacimiento" Grid.Row="2" Grid.Column="1" Background="White" Margin="10" Text="{Binding fechaNac}" />
+            <TextBlock x:Name="textBlock1" Text="Apellidos:" FontSize="30" Grid.Row="2" Margin="10"/>
+            <TextBox x:Name="txbApellidos" Grid.Row="2" Grid.Column="1" Background="White" Margin="10" Text="{Binding _apellido1, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
 
-            <TextBlock x:Name="textBlock3" Text="Telefono:" FontSize="30" Grid.Row="3" Margin="10"/>
-            <TextBox x:Name="txbTelefono" Grid.Row="3" Grid.Column="1" Background="White" Margin="10" Text ="{Binding telefono}"/>
+            <TextBlock x:Name="textBlock2" Text="Fecha de Nacimiento:" FontSize="30" Grid.Row="3" Margin="10"/>
+            <TextBox x:Name="txbFechaNacimiento" Grid.Row="3" Grid.Column="1" Background="White" Margin="10" Text="{Binding _fechaNac, Mode=TwoWay, UpdateSourceTrigger=Explicit}" />
 
-            <TextBlock x:Name="textBlock4" Text="Direccion:" FontSize="30" Grid.Row="4" Margin="10"/>
-            <ScrollViewer Grid.Row="5" Grid.ColumnSpan="2">
-                <TextBox x:Name="txbDireccion" Grid.Row="4" Grid.Column="1" Background="White" Margin="10" Text ="{Binding direccion}"/>
+            <TextBlock x:Name="textBlock3" Text="Telefono:" FontSize="30" Grid.Row="4" Margin="10"/>
+            <TextBox x:Name="txbTelefono" Grid.Row="4" Grid.Column="1" Background="White" Margin="10" Text ="{Binding _telefono, Mode=TwoWay, UpdateSourceTrigger=Explicit}"/>
+
+            <TextBlock x:Name="textBlock4" Text="Direccion:" FontSize="30" Grid.Row="5" Margin="10"/>
+            <ScrollViewer Grid.Row="6" Grid.ColumnSpan="2">
+                <TextBox x:Name="txbDireccion" Grid.Row="4" Grid.Column="1" Background="White" Margin="10" Text ="{Binding _direccion, Mode=TwoWay, UpdateSourceTrigger=Explicit}"/>
             </ScrollViewer>
 
         </Grid>

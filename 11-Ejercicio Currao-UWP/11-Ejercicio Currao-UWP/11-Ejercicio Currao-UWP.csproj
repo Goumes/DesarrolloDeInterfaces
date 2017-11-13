@@ -95,6 +95,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\clsVMBase.cs" />
     <Compile Include="ViewModels\clsMainPageVM.cs" />
     <Compile Include="Models\Entities\clsPersona.cs" />
     <Compile Include="Models\Lists\clsListadoPersonas.cs" />
