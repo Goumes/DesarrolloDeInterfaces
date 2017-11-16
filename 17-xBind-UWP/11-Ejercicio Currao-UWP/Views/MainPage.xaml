@@ -8,10 +8,6 @@
     xmlns:vm ="using:_11_Ejercicio_Currao_UWP.ViewModels"
     mc:Ignorable="d">
 
-    <Page.DataContext>
-        <vm:clsMainPageVM></vm:clsMainPageVM>
-    </Page.DataContext>
-
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <VisualStateManager.VisualStateGroups>
             <VisualStateGroup x:Name="VisualStateGroup">
@@ -45,31 +41,26 @@
 
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="10*"/>
             <RowDefinition Height="auto"/>
             <!-- Me sale un poco feo lo de la descripción porque he querido reciclar el Grid y no cambiarlo todo a Relative, pero cambiándolo saldría perfecto.  -->
         </Grid.RowDefinitions>
 
-        <StackPanel Orientation="Horizontal" Grid.Column="2" Background="Aquamarine">
-            <AppBarButton Icon="Delete"/>
-            <AppBarButton Icon="Save"/>
-        </StackPanel>
-
-        <ScrollViewer x:Name="scrollViewer" Grid.Row="0" Grid.RowSpan="2">
-            <ListView SelectedItem="{Binding personaSeleccionada, Mode=TwoWay}" Grid.Column="0" ItemsSource="{Binding listado}">
+        <ScrollViewer x:Name="scrollViewer">
+            <ListView Grid.Column="0" ItemsSource="{x:Bind ViewModel.listado}" SelectedIndex="{x:Bind ViewModel.indicePersonaSeleccionada, Mode=TwoWay}">
                 <ListView.ItemTemplate>
-                    <DataTemplate x:DataType ="x:String">
+                    <DataTemplate x:DataType="x:String">
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="{Binding Path=_nombre }"></TextBlock>
-                            <TextBlock Text="{Binding Path=_apellido1}" Margin="10,0,0,0"></TextBlock>
+                            <TextBlock Text="{Binding _nombre}"></TextBlock>
+                            <TextBlock Text="{Binding _apellido1}" Margin="10,0,0,0"></TextBlock>
                         </StackPanel>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
         </ScrollViewer>
 
-        <Grid x:Name="grid" Background="Beige" Grid.Row="1" Grid.Column="1" DataContext="{Binding personaSeleccionada}">
+        <Grid x:Name="grid" Background="Beige" Grid.Column="1">
             <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto"/>
@@ -84,21 +75,26 @@
             </Grid.ColumnDefinitions>
 
 
-            <TextBlock x:Name="textBlock" Text="Nombre:" FontSize="30" Grid.Row="0" Margin="10"/>
-            <TextBox x:Name="txbNombre" Grid.Row="0" Grid.Column="1" Background="White" Margin="10" Text="{Binding _nombre, Mode=TwoWay, UpdateSourceTrigger=Explicit}"/>
+            <CommandBar>
+                <AppBarButton x:Name ="btn" Icon="Save" Click="{x:Bind ViewModel.Guardar_Click}"/>
+                <AppBarButton x:Name ="btnD" Icon="Delete" Click= "{x:Bind ViewModel.Borrar_Click}"/>
+            </CommandBar>
 
-            <TextBlock x:Name="textBlock1" Text="Apellidos:" FontSize="30" Grid.Row="1" Margin="10"/>
-            <TextBox x:Name="txbApellidos" Grid.Row="1" Grid.Column="1" Background="White" Margin="10" Text="{Binding _apellido1, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBlock x:Name="textBlock" Text="Nombre:" FontSize="30" Grid.Row="1" Margin="10"/>
+            <TextBox x:Name="txbNombre" Grid.Row="1" Grid.Column="1" Background="White" Margin="10" Text="{x:Bind ViewModel.personaSeleccionada._nombre, Mode=TwoWay}"/>
 
-            <TextBlock x:Name="textBlock2" Text="Fecha de Nacimiento:" FontSize="30" Grid.Row="2" Margin="10"/>
-            <TextBox x:Name="txbFechaNacimiento" Grid.Row="2" Grid.Column="1" Background="White" Margin="10" Text="{Binding _fechaNac, Mode=TwoWay, UpdateSourceTrigger=Explicit}" />
+            <TextBlock x:Name="textBlock1" Text="Apellidos:" FontSize="30" Grid.Row="2" Margin="10"/>
+            <TextBox x:Name="txbApellidos" Grid.Row="2" Grid.Column="1" Background="White" Margin="10" Text="{x:Bind ViewModel.personaSeleccionada._apellido1, Mode=TwoWay}"/>
 
-            <TextBlock x:Name="textBlock3" Text="Telefono:" FontSize="30" Grid.Row="3" Margin="10"/>
-            <TextBox x:Name="txbTelefono" Grid.Row="3" Grid.Column="1" Background="White" Margin="10" Text ="{Binding _telefono, Mode=TwoWay, UpdateSourceTrigger=Explicit}"/>
+            <TextBlock x:Name="textBlock2" Text="Fecha de Nacimiento:" FontSize="30" Grid.Row="3" Margin="10"/>
+            <TextBox x:Name="txbFechaNacimiento" Grid.Row="3" Grid.Column="1" Background="White" Margin="10" Text="{x:Bind ViewModel.personaSeleccionada._fechaNac, Mode=TwoWay}" />
 
-            <TextBlock x:Name="textBlock4" Text="Direccion:" FontSize="30" Grid.Row="4" Margin="10"/>
+            <TextBlock x:Name="textBlock3" Text="Telefono:" FontSize="30" Grid.Row="4" Margin="10"/>
+            <TextBox x:Name="txbTelefono" Grid.Row="4" Grid.Column="1" Background="White" Margin="10" Text ="{x:Bind ViewModel.personaSeleccionada._telefono, Mode=TwoWay}"/>
+
+            <TextBlock x:Name="textBlock4" Text="Direccion:" FontSize="30" Grid.Row="5" Margin="10"/>
             <ScrollViewer Grid.Row="6" Grid.ColumnSpan="2">
-                <TextBox x:Name="txbDireccion" Grid.Row="4" Grid.Column="1" Background="White" Margin="10" Text ="{Binding _direccion, Mode=TwoWay, UpdateSourceTrigger=Explicit}"/>
+                <TextBox x:Name="txbDireccion" Grid.Row="4" Grid.Column="1" Background="White" Margin="10" Text ="{x:Bind ViewModel.personaSeleccionada._direccion, Mode=TwoWay}"/>
             </ScrollViewer>
 
         </Grid>

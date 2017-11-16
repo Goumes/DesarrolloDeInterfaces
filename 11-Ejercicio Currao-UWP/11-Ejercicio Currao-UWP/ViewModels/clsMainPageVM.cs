@@ -1,6 +1,7 @@
 ﻿using _05_PersonaModificada_ASP.Models.Entities;
 using _05_PersonaModificada_ASP.Models.Interfaces;
 using _11_Ejercicio_Currao_UWP.Models.Lists;
+using _13_DataContext.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;

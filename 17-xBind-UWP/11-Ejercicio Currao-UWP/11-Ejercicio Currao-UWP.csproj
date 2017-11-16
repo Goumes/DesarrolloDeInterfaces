@@ -95,8 +95,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewModels\clsVMBase.cs" />
-    <Compile Include="ViewModels\DelegateCommand.cs" />
+    <Compile Include="Interfaces\clsVMBase.cs" />
     <Compile Include="ViewModels\clsMainPageVM.cs" />
     <Compile Include="Models\Entities\clsPersona.cs" />
     <Compile Include="Models\Lists\clsListadoPersonas.cs" />
@@ -138,9 +137,7 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Interfaces\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>
