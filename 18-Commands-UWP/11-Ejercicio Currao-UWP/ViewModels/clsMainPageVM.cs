@@ -69,6 +69,8 @@ namespace _11_Ejercicio_Currao_UWP.ViewModels
             }
         }
         #endregion
+
+        #region Metodos
         public bool puedeBorrar()
         {
             bool puede = false;
@@ -85,7 +87,6 @@ namespace _11_Ejercicio_Currao_UWP.ViewModels
         {
             listado.Remove(_personaSeleccionada);
         }
-        #region Metodos
         #endregion
     }
 }
