@@ -1,10 +1,12 @@
-﻿using System;
+﻿using _05_PersonaModificada_ASP.Models.Entities;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -39,6 +41,21 @@ namespace _11_Ejercicio_Currao_UWP.Views
             this.txbFechaNacimiento.GetBindingExpression(TextBox.TextProperty).UpdateSource();
             this.txbTelefono.GetBindingExpression(TextBox.TextProperty).UpdateSource();
             this.txbDireccion.GetBindingExpression(TextBox.TextProperty).UpdateSource();
+        }
+
+        private void txbBusqueda_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            listView.Items.Clear();
+
+            foreach (clsPersona row in listView.Items)
+            {
+                if (row._nombre.Contains(txbBusqueda.Text))
+                {
+                    clsPersona persona = new clsPersona(row.idPersona, row._nombre, row.apellido1, row.apellido2, row.fechaNac, row.direccion, row.telefono);
+                    listView.Items.Add(persona);
+                }
+            }
+
         }
     }
 }
