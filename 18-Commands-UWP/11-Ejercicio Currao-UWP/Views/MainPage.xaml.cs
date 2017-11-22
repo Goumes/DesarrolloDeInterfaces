@@ -45,9 +45,10 @@ namespace _11_Ejercicio_Currao_UWP.Views
 
         private void txbBusqueda_TextChanged(object sender, TextChangedEventArgs e)
         {
-            listView.Items.Clear();
+            ItemCollection original = listView.Items;
 
-            foreach (clsPersona row in listView.Items)
+
+            foreach (clsPersona row in original)
             {
                 if (row._nombre.Contains(txbBusqueda.Text))
                 {

@@ -52,15 +52,16 @@
         </Grid.RowDefinitions>
 
         <StackPanel Orientation="Horizontal" Grid.Column="2" Background="Aquamarine">
-            <AppBarButton Icon="Add" Label="Añadir"/>
-            <AppBarButton Icon="Save" Label="Guardar"/>
+            <AppBarButton Icon="Find" Label="Buscar" Command="{Binding buscarCommand}"/>
+            <AppBarButton Icon="Add" Label="Añadir" Command="{Binding addCommand}"/>
+            <AppBarButton Icon="Save" Label="Guardar" Command="{Binding saveCommand}" Click="btn_Click"/>
             <AppBarButton Icon="Delete" Label="Borrar" Command="{Binding borrarCommand}"/>
         </StackPanel>
 
-        <TextBox x:Name="txbBusqueda" PlaceholderText="Busqueda..." TextWrapping="Wrap" TextChanged="txbBusqueda_TextChanged"></TextBox>
+        <TextBox x:Name="txbBusqueda" PlaceholderText="Busqueda..." TextWrapping="Wrap" Text="{Binding textoBusqueda, Mode =TwoWay, UpdateSourceTrigger=PropertyChanged}"></TextBox>
 
         <ScrollViewer x:Name="scrollViewer" Grid.Row="1" Grid.RowSpan="2">
-            <ListView x:Name="listView" SelectedItem="{Binding personaSeleccionada, Mode=TwoWay}" Grid.Column="0" ItemsSource="{Binding listado}">
+            <ListView x:Name="listView" SelectedItem="{Binding personaSeleccionada, Mode=TwoWay}" Grid.Column="0" ItemsSource="{Binding listadoAuxiliar}">
                 <ListView.ItemTemplate>
                     <DataTemplate x:DataType ="x:String">
                         <StackPanel Orientation="Horizontal">
@@ -92,7 +93,7 @@
             <TextBox x:Name="txbNombre" Grid.Row="0" Grid.Column="1" Background="White" Margin="10" Text="{Binding _nombre, Mode=TwoWay, UpdateSourceTrigger=Explicit}"/>
 
             <TextBlock x:Name="textBlock1" Text="Apellidos:" FontSize="30" Grid.Row="1" Margin="10"/>
-            <TextBox x:Name="txbApellidos" Grid.Row="1" Grid.Column="1" Background="White" Margin="10" Text="{Binding _apellido1, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox x:Name="txbApellidos" Grid.Row="1" Grid.Column="1" Background="White" Margin="10" Text="{Binding _apellido1, Mode=TwoWay, UpdateSourceTrigger=Explicit}"/>
 
             <TextBlock x:Name="textBlock2" Text="Fecha de Nacimiento:" FontSize="30" Grid.Row="2" Margin="10"/>
             <TextBox x:Name="txbFechaNacimiento" Grid.Row="2" Grid.Column="1" Background="White" Margin="10" Text="{Binding _fechaNac, Mode=TwoWay, UpdateSourceTrigger=Explicit}" />
