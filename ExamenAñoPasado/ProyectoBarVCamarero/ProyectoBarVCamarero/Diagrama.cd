@@ -1,0 +1,192 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="ProyectoBarVCamarero.App" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="20.25" Y="3.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAQAAIAAA=</HashCode>
+      <FileName>App.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="ProyectoBarVCamarero.MainPage" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="10" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAYxAAAAAAAAQAQAQEAAAAAACAINIUAAQAAA=</HashCode>
+      <FileName>views\MainPage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="ProyectoBarVCamarero.bl.CategoriaBL">
+    <Position X="8" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAACCAAAAAAAAAAAAAABAAAAAAAAAAAAAA=</HashCode>
+      <FileName>bl\CategoriaBL.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProyectoBarVCamarero.bl.CuentaBL">
+    <Position X="13" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAIAAACAAAAABAAACAAAAAQAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>bl\CuentaBL.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProyectoBarVCamarero.bl.ListadosBL">
+    <Position X="1.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AADAAAAAAAAAAAiAAAACAAAAABAAAIEACAAAAAAAAAA=</HashCode>
+      <FileName>bl\ListadosBL.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProyectoBarVCamarero.bl.MesaBL">
+    <Position X="6" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAAAAAAAAAACAAAAAAAAAAAAAAIAAAAAA=</HashCode>
+      <FileName>bl\MesaBL.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProyectoBarVCamarero.bl.NuevaComandaBL">
+    <Position X="10.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>bl\NuevaComandaBL.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProyectoBarVCamarero.bl.ProductoBL">
+    <Position X="4" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAQA=</HashCode>
+      <FileName>bl\ProductoBL.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProyectoBarVCamarero.dal.CategoriaController">
+    <Position X="8" Y="3.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAABIEAAAAAAAAAAAA=</HashCode>
+      <FileName>dal\CategoriaController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProyectoBarVCamarero.dal.CuentaController">
+    <Position X="13" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAAACAAEAAAAAAgAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>dal\CuentaController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProyectoBarVCamarero.dal.DetallesCuentaController">
+    <Position X="15" Y="3.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAAEAAAAAAAAAAAAAAAAAAAAAAAIAAAAAA=</HashCode>
+      <FileName>dal\DetallesCuentaController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProyectoBarVCamarero.dal.MesaController">
+    <Position X="6" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAAAAAAAAAAABAAAQAAAAAAAAAAACA=</HashCode>
+      <FileName>dal\MesaController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProyectoBarVCamarero.dal.NuevaComandaController">
+    <Position X="10.5" Y="3.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAABAAAAAAAAAABAIAIgAAAAAAgAAAAA=</HashCode>
+      <FileName>dal\NuevaComandaController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProyectoBarVCamarero.dal.ProductoController">
+    <Position X="4" Y="3.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AABAAAgAAAAAAAAAAAAAAAAAAAAAAAIAAAAAIAAAAAA=</HashCode>
+      <FileName>dal\ProductoController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProyectoBarVCamarero.models.Categoria" Collapsed="true">
+    <Position X="8.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAACAAABAAgAEAAAAAAAAIAAAAAIAAAA=</HashCode>
+      <FileName>models\Categoria.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProyectoBarVCamarero.models.Cuenta" Collapsed="true">
+    <Position X="12.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAABAgAAAQACABAAAAAAAAAAQAEAAAgABAAAAQCAAAE=</HashCode>
+      <FileName>models\Cuenta.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProyectoBarVCamarero.models.Listdetallecuenta" Collapsed="true">
+    <Position X="15.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ARAAAAAAAABAAAAAAAAAAAAAAgAAAAgAAIAAAAAAAAA=</HashCode>
+      <FileName>models\Listdetallecuenta.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProyectoBarVCamarero.models.Mesa" Collapsed="true">
+    <Position X="6" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAgAAAQAQIAAAAICAgAAAAAAgAAAAAIAAAAAAAAA=</HashCode>
+      <FileName>models\Mesa.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProyectoBarVCamarero.models.NuevasComandas" Collapsed="true">
+    <Position X="10.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QRAAAAAAAABAAAAAAAAAAAAAAgAAAAgBAIAAAAAAAAA=</HashCode>
+      <FileName>models\NuevasComandas.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProyectoBarVCamarero.models.Producto">
+    <Position X="4.25" Y="1.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAACAAABAAgAEACAAEAAAIAAAAAIAAEA=</HashCode>
+      <FileName>models\Producto.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProyectoBarVCamarero.viewModel.clsMainPageVM" Collapsed="true">
+    <Position X="9.5" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>qF9ISRBEEhBArXoAzwCjMDAiKBokYu9oANjFopAeyB0=</HashCode>
+      <FileName>viewModel\clsMainPageVM.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProyectoBarVCamarero.viewModel.clsVMBase" Collapsed="true">
+    <Position X="10.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIAAAAAAAAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>viewModel\clsVMBase.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ProyectoBarVCamarero.viewModel.DelegateCommand" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="20.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQEACAAQAAECAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>viewModel\DelegateCommand.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="ProyectoBarVCamarero.views.CuentaNoFinalizada" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="8" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAQAAAAAAAAAAEEAAAACgQAFABAEQQAAAAAQAAAKAA=</HashCode>
+      <FileName>views\CuentaNoFinalizada.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="ProyectoBarVCamarero.views.TablePage" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="12" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAUEACAAAAAAAEEAAAACgQGFABAEQQAACBACAAAKAA=</HashCode>
+      <FileName>views\TablePage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

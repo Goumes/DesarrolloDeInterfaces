@@ -1,0 +1,47 @@
+﻿<Page
+    x:Class="UserControl1.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:UserControl1"
+    xmlns:controls="using:UserControl1.UserControls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    
+    <Grid Name="gridPrincipal" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+      
+        <Grid.ColumnDefinitions>
+            
+            <ColumnDefinition Width="2*"></ColumnDefinition>
+            <ColumnDefinition Width="8*"></ColumnDefinition>
+            
+        </Grid.ColumnDefinitions>
+
+        <StackPanel  Grid.Column="0" >
+            <AppBarButton Icon="Add" Content="Añadir Alumno" Click="AppBarButton_Click" Label="Añadir Contacto"></AppBarButton>
+            <TextBlock Text="Nombre..." Margin="5"/>
+            <TextBox x:Name="txtName" Margin="5"></TextBox>
+            <TextBlock Text="Apellidos..." Margin="5"/>
+            <TextBox x:Name="txtApellidos" Margin="5"></TextBox>
+            <TextBlock Text="Foto (url)..." Margin="5"/>
+            <TextBox x:Name="txturlfoto" Margin="5"> </TextBox>
+        </StackPanel>
+        <ScrollViewer  Grid.Column="1" x:Name="scroll">
+            <Grid x:Name="gridUserControls" Grid.Row="0" >
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+
+                </Grid.RowDefinitions>
+            </Grid>
+       
+        </ScrollViewer>
+
+    </Grid>
+</Page>

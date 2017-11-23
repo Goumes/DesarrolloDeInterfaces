@@ -1,0 +1,194 @@
+﻿<Page
+    x:Class="ProyectoBarVCamarero.views.TablePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ProyectoBarVCamarero.views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="using:ProyectoBarVCamarero.viewModel"
+    mc:Ignorable="d">
+
+    <!--<Page.DataContext>
+
+        -->
+    <!--<vm:clsMainPageVM />-->
+    <!--
+    </Page.DataContext>-->
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" >
+        <!--CUENTA DE UNA MESA-->
+
+
+
+
+
+
+
+
+        <Grid Visibility="Visible" Background="LightGray">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="AUTO"/>
+                <RowDefinition Height="AUTO"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="AUTO"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="400"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="AUTO"/>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Grid.RowSpan="2" Grid.Row="0" Grid.Column="0"  Background="LightBlue">
+            
+                <TextBlock HorizontalAlignment="Center"  x:Name="txtNumMesa" FontSize="30"/>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <TextBlock HorizontalAlignment="Center"  x:Name="lblidcuenta" FontSize="30" Visibility="{Binding mesaConCuenta}" Foreground="#677488" Text="IDcuenta: "/>
+                        <TextBlock HorizontalAlignment="Center" x:Name="txtidcuenta" FontSize="30" Visibility="{Binding mesaConCuenta}"  Foreground="#677488" Text="{Binding cuentaSeleccionada.idcuenta}"/>
+                </StackPanel>
+                <StackPanel >
+                    <Image HorizontalAlignment="Center" x:Name="qrcodeImg" Stretch="None"  />
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <AppBarButton Margin="10" HorizontalAlignment="Center" Label="Imprimir Codigo qr" Icon="Scan" Click="AppBarButton_Click"></AppBarButton>
+                        <AppBarButton Margin="10" HorizontalAlignment="Center" Label="Imprimir Cuenta" Icon="Scan"  Click="AppBarButton_Click_1"  Visibility="{Binding mesaConCuenta}"></AppBarButton>
+                    </StackPanel>
+                
+
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <AppBarButton Margin="10" HorizontalAlignment="Center" Label="Cuenta Pagada" Icon="Accept" Click="AppBarButton_Click_2" Command="{Binding FinalizarCuentaPagadaCommand}" Visibility="{Binding mesaConCuenta}"></AppBarButton>
+                        <AppBarButton Margin="10" HorizontalAlignment="Center" Label="Cuenta Sin Pagar" Icon="Cancel" Click="AppBarButton_Click_3" Command="{Binding FinalizarCuentaSinPagarCommand}" Visibility="{Binding mesaConCuenta}"></AppBarButton>
+                    </StackPanel>
+                </StackPanel>
+            </StackPanel>
+
+            <Grid   x:Name="paraImprimir" Grid.Row="0" Grid.Column="1" Background="LightGray" Margin="15">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="200"/>
+                    <ColumnDefinition Width="200"/>
+                    <ColumnDefinition Width="200"/>
+                    <ColumnDefinition Width="200"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="AUTO"/>
+                    <RowDefinition Height="AUTO"/>
+                    <RowDefinition Height="AUTO"/>
+                    <RowDefinition Height="AUTO"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Visibility="{Binding mesaConCuenta}" Grid.Column="0" Grid.Row="0" Text="Producto" TextAlignment="Center" Foreground="#042E56"></TextBlock>
+                <TextBlock Visibility="{Binding mesaConCuenta}" Grid.Column="1" Grid.Row="0" Text="Precio unitario" TextAlignment="Center" Foreground="#042E56"></TextBlock>
+                <TextBlock Visibility="{Binding mesaConCuenta}" Grid.Column="2" Grid.Row="0" Text="Cantidad" TextAlignment="Center" Foreground="#042E56"></TextBlock>
+                <TextBlock Visibility="{Binding mesaConCuenta}" Grid.Column="3" Grid.Row="0" Text="Precio final" TextAlignment="Center" Foreground="#042E56"></TextBlock>
+
+                <GridView Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" Visibility="{Binding mesaConCuenta}" ItemsSource="{Binding cuentaSeleccionada.listdetallecuenta}"
+                        SelectedItem="{Binding detalleCuentaSeleccionada, Mode=TwoWay}"                   
+                        IsItemClickEnabled="True"
+                        IsSwipeEnabled="true"
+                        SelectionMode="Single">
+
+                    <GridView.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapGrid Orientation="Vertical"/>
+                        </ItemsPanelTemplate>
+                    </GridView.ItemsPanel>
+
+                    <GridView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="200"/>
+                                    <ColumnDefinition Width="200"/>
+                                    <ColumnDefinition Width="200"/>
+                                    <ColumnDefinition Width="200"/>
+                                    <ColumnDefinition Width="AUTO"/>
+
+                                </Grid.ColumnDefinitions>
+
+                                <TextBlock Grid.Column="0" Text="{Binding producto.nombre}" TextAlignment="Center" Foreground="#1073D6"></TextBlock>
+                                <TextBlock Grid.Column="1" Text="{Binding producto.precio}" TextAlignment="Center" Foreground="#1073D6"></TextBlock>
+                                <TextBlock Grid.Column="2" Text="{Binding cantidad}" TextAlignment="Center" Foreground="#1073D6"></TextBlock>
+                                <TextBlock Grid.Column="3" Text="{Binding precioTotal}" TextAlignment="Center" Foreground="#1073D6"></TextBlock>
+
+                            </Grid>
+                        </DataTemplate>
+                    </GridView.ItemTemplate>
+                </GridView>
+
+
+                <StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="4" Margin="70,70,0,0" Orientation="Horizontal" Visibility="{Binding mesaConCuenta}" HorizontalAlignment="Center">
+
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" Foreground="#042E56" Text="Total Cuenta"></TextBlock>
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" Foreground="#042E56" Text="{Binding cuentaSeleccionada.preciofinal}" Margin="20,0,0,0" ></TextBlock>
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" Foreground="#042E56" Text="€" Margin="5,0,0,0"></TextBlock>
+                </StackPanel>
+
+            </Grid>
+            <!--GRID PARA AÑADIR PEDIDO A LA CUENTA-->
+            <Grid Grid.Row="0" Grid.Column="5" Margin="25" Padding="20" Grid.RowSpan="2" BorderThickness="3" BorderBrush="#677488">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="AUTO" />
+                    <RowDefinition Height="AUTO" />
+                    <RowDefinition Height="AUTO" />
+                    <RowDefinition Height="AUTO" />
+
+                </Grid.RowDefinitions>
+
+                <StackPanel Grid.Row="0">
+                    <TextBlock Text="Categoria" FontSize="15" Foreground="#1073D6"></TextBlock>
+                    <ComboBox  IsDropDownOpen="True" x:Name="combocategorias" ItemsSource="{Binding listCategorias}" SelectedItem="{Binding categoriaSeleccionada , Mode=TwoWay}" SelectedIndex="{Binding SelectedIndexCategoria}" >
+                        <ComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Foreground="#1073D6" Text="{Binding nombre}"></TextBlock>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ComboBox.ItemTemplate>
+
+
+                    </ComboBox>
+                </StackPanel>
+
+                <StackPanel Grid.Row="1" >
+                    <TextBlock Text="Producto" Foreground="#1073D6" FontSize="15"></TextBlock>
+                    <ComboBox  IsDropDownOpen="True" x:Name="comboproductos" ItemsSource="{Binding productos}" SelectedItem="{Binding productoSeleccionado, Mode=TwoWay}" SelectedIndex="{Binding SelectedIndexProducto}" >
+                        <ComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="{Binding nombre}" Foreground="#1073D6"></TextBlock>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ComboBox.ItemTemplate>
+                    </ComboBox>
+                </StackPanel>
+                <StackPanel Grid.Row="2" >
+                    <TextBlock Text="Cantidad: " FontSize="15" Foreground="#1073D6"></TextBlock>
+                    <TextBox  x:Name="addCantCuenta" Foreground="#1073D6" KeyDown="modifyCantCuenta_KeyDown"></TextBox>
+                </StackPanel>
+                <AppBarButton Margin="20" Grid.Row="3" Background="LightGray" Foreground="#1073D6" x:Name="aceptarañadirPedido" Icon="Accept" IsEnabled="False"  Label="Añadir Pedido" Click="aceptarañadirPedido_Click" Command="{Binding AñadirPedidoaCuentaCommand}"></AppBarButton>
+
+            </Grid>
+
+            <!--GRID PARA BOTONES DE ELIMINAR Y EDITAR PEDIDO-->
+            <Grid Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="3" Visibility="{Binding btnDetallesCuentaxMesa}">
+                <Grid >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="AUTO"></ColumnDefinition>
+                        <ColumnDefinition Width="AUTO"></ColumnDefinition>
+                        <ColumnDefinition Width="AUTO"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+
+                    </Grid.ColumnDefinitions>
+
+                    <AppBarButton Background="LightGray" Foreground="#1073D6" Margin="20" Grid.Column="1" x:Name="eliminarPedido" Icon="Delete" Label="Eliminar Pedido" Command="{Binding EliminarPedidodeCuentaCommand}"></AppBarButton>
+                    <AppBarButton Background="LightGray" Foreground="#1073D6" Margin="20" Grid.Column="2" x:Name="editarInformacion" Icon="Edit" Label="Editar Cantidad" Click="editarInformacion_Click" Command="{Binding EditarPedidodeCuentaCommand}"  IsEnabled="False"></AppBarButton>
+
+                    <StackPanel Orientation="Horizontal" Grid.Column="3">
+                        <TextBlock Foreground="#1073D6" Text="Cantidad:" VerticalAlignment="Center" FontSize="15"></TextBlock>
+                        <TextBox Foreground="#1073D6"  x:Name="modifyCantCuenta" KeyDown="modifyCantCuenta_KeyDown" MaxHeight="20"></TextBox>
+                    </StackPanel>
+                </Grid>
+
+            </Grid>
+        </Grid>
+    </Grid>
+</Page>

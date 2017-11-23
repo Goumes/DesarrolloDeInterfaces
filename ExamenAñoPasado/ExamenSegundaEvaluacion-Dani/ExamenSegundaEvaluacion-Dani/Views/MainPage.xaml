@@ -1,0 +1,34 @@
+﻿<Page
+    x:Class="ExamenSegundaEvaluacion_Dani.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ExamenSegundaEvaluacion_Dani"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="using:ExamenSegundaEvaluacion_Dani.ViewModel"
+    mc:Ignorable="d">
+
+    <Page.DataContext>
+        <vm:clsMainPageVM></vm:clsMainPageVM>
+    </Page.DataContext>
+    
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+        <GridView ItemsSource="{Binding lista,UpdateSourceTrigger=PropertyChanged}" IsItemClickEnabled="True"  SelectedItem="{Binding Path=personaje, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ItemClick="GridView_ItemClick" >
+            <GridView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel >
+                        <Image Source="{Binding imagen}" MaxWidth="200" MaxHeight="200"></Image>
+                        <TextBlock Text="{Binding nombre}" TextAlignment="Center"></TextBlock>
+                        
+                    </StackPanel>
+
+
+                </DataTemplate>
+
+            </GridView.ItemTemplate>
+
+        </GridView>
+
+    </Grid>
+</Page>

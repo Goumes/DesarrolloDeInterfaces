@@ -1,0 +1,41 @@
+﻿<Page
+    x:Class="RelativeLayouts.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:RelativeLayouts"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    >
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition/>
+            <RowDefinition Height="Auto" MinHeight="51"></RowDefinition>
+
+        </Grid.RowDefinitions>
+
+        <RelativePanel Grid.Row="0" BorderThickness="1" BorderBrush="Gray">
+            <TextBlock x:Name="textBlock" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignTopWithPanel="True"  TextWrapping="Wrap" Text="TITLE"  FontSize="36" FontWeight="Bold" />
+            <Button x:Name="button" Content="Search" RelativePanel.AlignTopWithPanel="True" RelativePanel.AlignRightWithPanel="True" Margin="10" />
+            <TextBox x:Name="textBox" RelativePanel.AlignTopWithPanel="True" RelativePanel.LeftOf="button"  TextWrapping="Wrap" Margin="10"/>
+            <TextBlock x:Name="textBlock2" RelativePanel.AlignTopWithPanel="True" RelativePanel.LeftOf="textBox" Text="Search: " FontSize="18" Margin="10"/>
+        </RelativePanel>
+        <RelativePanel Grid.Row="1" BorderThickness="1" Margin="0,6,0,45" Grid.RowSpan="2" >
+            <Canvas>
+                <Ellipse x:Name="Elipse1" Canvas.ZIndex="100" Fill="Red" Height="60" Width="54" Canvas.Left="330" Canvas.Top="483" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto">
+                    <Ellipse.RenderTransform>
+                        <CompositeTransform Rotation="-284.962"/>
+                    </Ellipse.RenderTransform>
+                </Ellipse>
+                <InkCanvas Canvas.ZIndex="101"/>
+               
+            </Canvas>
+            <Button x:Name="Boton" Content="DIBUJAR" Click="Boton_Click"/>
+        </RelativePanel>
+        <RelativePanel Grid.Row="2" BorderThickness="1" BorderBrush="Blue" Background="Blue" MaxHeight="50"/>
+        <HyperlinkButton NavigateUri="SecondPage.xaml" />
+
+    </Grid>
+</Page>

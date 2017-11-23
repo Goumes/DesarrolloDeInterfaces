@@ -1,0 +1,32 @@
+﻿<Page
+    x:Class="RelativeLayouts.Pages.BlankPage1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:RelativeLayouts.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <RelativePanel>
+
+
+
+            <InkCanvas Name="lienzo">
+
+            </InkCanvas>
+            <Image Canvas.ZIndex="-1" x:Name="image" Margin="384,68,544,348" Source="ms-appx:///Assets/Cara.png"/>
+            <Button x:Name="BotonBorrar" Content="Borrar" RelativePanel.Below="image" RelativePanel.AlignLeftWith="image" Click="BotonBorrar_Click" Height="48" Margin="412,-344,-524,296" RenderTransformOrigin="0.5,0.5" Width="173" >
+                <Button.RenderTransform>
+                    <CompositeTransform ScaleY="-1"/>
+                </Button.RenderTransform>
+            </Button>
+            <Button x:Name="BotonAtras" Content="Atras" RelativePanel.Below="image" RelativePanel.AlignLeftWith="image" Click="BotonAtras_Click" Margin="700,-344,-872,276" Width="226" Height="68" RenderTransformOrigin="0.5,0.5">
+                <Button.RenderTransform>
+                    <CompositeTransform ScaleY="-1"/>
+                </Button.RenderTransform>
+            </Button>
+        </RelativePanel>
+
+    </Grid>
+</Page>

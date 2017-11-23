@@ -1,0 +1,59 @@
+﻿<Page
+    x:Class="Binding2.Views.Detail"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Binding2.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="using:Binding2.ViewModels"
+    mc:Ignorable="d">
+    
+    
+    <Page.DataContext>
+        <vm:clsMainPageVM />
+    </Page.DataContext>
+
+
+
+    <Page.Transitions>
+        <TransitionCollection>
+            <NavigationThemeTransition />
+        </TransitionCollection>
+    </Page.Transitions>
+
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+        <StackPanel Orientation="Horizontal" Grid.ColumnSpan="2" Grid.Row="0" Grid.Column="0">
+
+            
+            <AppBarButton x:Name="Save"  Grid.Row="0" Background="LightBlue" Icon="Save" Click="Save_Click" Label="Save" Command="{Binding guardarCommand}"></AppBarButton>
+            <AppBarButton x:Name="Delete" Grid.Row="0"  Background="LightBlue" Icon="Delete" Command="{Binding EliminarCommand}" Label="Delete"></AppBarButton>
+
+        </StackPanel>
+
+        <Grid  DataContext="{Binding personaSeleccionada}">
+
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+
+            </Grid.RowDefinitions>
+                 <TextBox  Grid.Row="1" x:Name="txtNombre" Text="{Binding Path=nombre, Mode=TwoWay, UpdateSourceTrigger=Explicit}" Margin="15"></TextBox>
+                 <TextBox  Grid.Row="2" x:Name="txtApellidos" Margin="15" Text="{Binding Path=apellido, Mode=TwoWay, UpdateSourceTrigger=Explicit}"></TextBox>
+
+                 <TextBox  Grid.Row="3" x:Name="txtFechaNacimiento"  Margin="15" Text="{Binding Path=fechaNac, Mode=TwoWay, UpdateSourceTrigger=Explicit}">
+                  </TextBox>
+                 <TextBox  Grid.Row="4" x:Name="txtTelefono" Margin="15" Text="{Binding Path=telefono, Mode=TwoWay, UpdateSourceTrigger=Explicit}"></TextBox>
+                <ScrollViewer  Grid.Row="5" Grid.RowSpan="3" Margin="15" >
+                    <TextBox  x:Name="txtDireccion" Margin="5" TextWrapping="Wrap" Text="{Binding Path=direccion, Mode=TwoWay, UpdateSourceTrigger=Explicit}" ></TextBox>
+                </ScrollViewer>
+            </Grid>
+     </Grid>
+</Page>

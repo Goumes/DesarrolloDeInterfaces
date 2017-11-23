@@ -1,0 +1,38 @@
+﻿<Window x:Class="HelloWorldsWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HelloWorldsWPF"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="129*"/>
+            <ColumnDefinition Width="34*"/>
+            <ColumnDefinition Width="354*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Text="Escriba una oracion" Margin="0,8,0,286" Grid.ColumnSpan="3"/>
+        <TextBox Name="txtOracion" RenderTransformOrigin="0.5,0.5" Margin="0,39,4,227"/>
+        <Button Click="Button_Click" Content="Numero de vocales" Margin="5,44,196,242" RenderTransformOrigin="0.5,0.5" Grid.Column="1" Grid.ColumnSpan="2">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="1"/>
+                    <SkewTransform />
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <Button x:Name="buttona" Content="a" HorizontalAlignment="Left" Height="21" Margin="6,95,0,0" VerticalAlignment="Top" Width="28" Click="buttona_Click"/>
+        <Button x:Name="buttone" Content="e" Height="21" Margin="49,95,52,0" VerticalAlignment="Top" Click="buttone_Click"/>
+        <Button x:Name="buttoni" Content="i" HorizontalAlignment="Left" Height="21" Margin="89,0,0,203" VerticalAlignment="Bottom" Width="28" Click="buttoni_Click"/>
+        <Button x:Name="buttono" Content="o" HorizontalAlignment="Right" Height="21" Margin="0,95,11,0" VerticalAlignment="Top" Width="28" Grid.ColumnSpan="2" Click="buttono_Click"/>
+        <Button x:Name="buttonu" Content="u" HorizontalAlignment="Left" Height="21" Margin="2,95,0,0" VerticalAlignment="Top" Width="28" Grid.Column="2" Click="buttonu_Click"/>
+        <Button x:Name="CambiarPagina" Grid.ColumnSpan="3" Content="Cambiar de pagina
+" HorizontalAlignment="Left" Margin="110,217,0,0" VerticalAlignment="Top" Width="148"/>
+
+    </Grid>
+</Window>

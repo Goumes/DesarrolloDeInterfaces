@@ -1,0 +1,47 @@
+﻿<Page
+    x:Class="EjercicioXaml.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:EjercicioXaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Name="Grid" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+        <Button Name="Btn1" Content="Boton 1" Background="Blue" FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="70" FontFamily="Verdana" FontSize="16" BorderBrush="Yellow" Margin="80,110,80,0" d:LayoutOverrides="LeftPosition, RightPosition"/>
+       
+        <Button>
+            <Button.Name>Btn2</Button.Name>
+            <Button.Background>
+                <Brush>Blue</Brush>
+            </Button.Background>
+            <Button.FontWeight>
+                <FontWeight>Bold</FontWeight>
+            </Button.FontWeight>
+            <Button.HorizontalAlignment>
+                <HorizontalAlignment>Center</HorizontalAlignment>
+            </Button.HorizontalAlignment>
+            <Button.VerticalAlignment>
+                <VerticalAlignment>Center</VerticalAlignment>
+            </Button.VerticalAlignment>
+            <Button.Height>
+                <x:Double>70</x:Double>
+            </Button.Height>
+            <Button.FontFamily>
+                <FontFamily>Verdana</FontFamily>
+            </Button.FontFamily>
+            <Button.FontSize>
+                <x:Double>16</x:Double>
+            </Button.FontSize>
+            <Button.BorderBrush>
+                <Brush>Yellow</Brush>
+            </Button.BorderBrush>
+            <Button.Content>
+                Boton2
+            </Button.Content>
+        </Button>
+
+
+    </Grid>
+</Page>

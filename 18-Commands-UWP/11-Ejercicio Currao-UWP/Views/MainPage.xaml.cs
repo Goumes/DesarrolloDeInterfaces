@@ -42,21 +42,5 @@ namespace _11_Ejercicio_Currao_UWP.Views
             this.txbTelefono.GetBindingExpression(TextBox.TextProperty).UpdateSource();
             this.txbDireccion.GetBindingExpression(TextBox.TextProperty).UpdateSource();
         }
-
-        private void txbBusqueda_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            ItemCollection original = listView.Items;
-
-
-            foreach (clsPersona row in original)
-            {
-                if (row._nombre.Contains(txbBusqueda.Text))
-                {
-                    clsPersona persona = new clsPersona(row.idPersona, row._nombre, row.apellido1, row.apellido2, row.fechaNac, row.direccion, row.telefono);
-                    listView.Items.Add(persona);
-                }
-            }
-
-        }
     }
 }

@@ -1,0 +1,68 @@
+﻿<Page
+    x:Class="ControlDeslizante.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ControlDeslizante"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <RelativePanel Grid.Row="0">
+            <TextBlock Text="Slider whit Music" x:Name="Titulo" HorizontalAlignment="Center" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignLeftWithPanel="True"/>
+            <Button Content="Search Video" RelativePanel.Below="Titulo" Margin="20" x:Name="botonplay" Click="botonplay_Click"/>
+            <MediaPlayerElement x:Name="mediaSimple" RelativePanel.Below="botonplay" 
+                        Width="400"
+                        AreTransportControlsEnabled="True"
+                        AutoPlay="True"/>
+            
+        </RelativePanel>
+
+
+        <RelativePanel Grid.Row="1">
+            <RelativePanel Name="progressbar" BorderBrush="Blue" BorderThickness="3" Margin="20">
+            <Border Name="titulopb" BorderBrush="Black" BorderThickness="1">
+            <TextBlock  Text="PROGRESS BAR" FontSize="35"/>
+            </Border>
+            
+             <TextBlock  Text="Determinado" FontSize="30" Name="determinada"  RelativePanel.Below="titulopb"/>
+            <!--DETERMINADO-->
+            <RelativePanel BorderBrush="Black" BorderThickness="2" RelativePanel.Below="determinada" Name="pbdeterminada" Margin="10">
+                <AppBarButton Icon="Home" Label="App1" x:Name="home"/>
+                <Button Name="install" Content="Instalar"  Margin="15" RelativePanel.RightOf="home" RelativePanel.AlignBottomWith="home" Click="install_Click"/>
+                <ProgressBar Minimum="0" Maximum="100" Value="0"  Name="Instalando" MinHeight="20" MinWidth="150" Margin="15" RelativePanel.RightOf="home" RelativePanel.AlignBottomWith="home" Visibility="Collapsed"/>
+                <Button Content="Clickea Para Instalar" RelativePanel.AlignBottomWith="home" Visibility="Collapsed" Name="Clickforinstall" RelativePanel.RightOf="Instalando" Margin="15" Click="Clickforinstall_Click" />
+                <TextBlock Name="instalado" Text="Instalado"  Margin="15" RelativePanel.AlignBottomWith="home" Visibility="Collapsed" RelativePanel.RightOf="home" />
+            </RelativePanel>
+                <!--INDETERMINADO-->
+                <TextBlock  Text="Indeterminado" FontSize="30" Name="indeterminada"  RelativePanel.Below="pbdeterminada"/>
+            <RelativePanel  BorderBrush="Black" BorderThickness="2" RelativePanel.Below="indeterminada" Name="pbindeterminada" Margin="10" Background="AliceBlue">
+                <AppBarButton Icon="Camera" Label="Camara" x:Name="camera"/>
+                <Button Name="buscaCamara" Content="Buscar Camara"  Margin="15" RelativePanel.RightOf="camera" RelativePanel.AlignBottomWith="camera" Click="buscaCamara_Click"/>
+                <ProgressBar Foreground="Black" Name="buscando" IsIndeterminate="True" MinHeight="20" MinWidth="150" Margin="15" RelativePanel.RightOf="camera" RelativePanel.AlignBottomWith="camera" Visibility="Collapsed"/>
+                <TextBlock Text="buscando..." Margin="15" RelativePanel.RightOf="camera" RelativePanel.Below="buscando" Visibility="Collapsed" Name="txtbuscando"/>
+                <Button Name="encontrado" Content="Encontrado" Margin="15" RelativePanel.RightOf="buscando" RelativePanel.AlignBottomWith="buscaCamara" Visibility="Collapsed" Click="encontrado_Click"/>
+                <TextBlock Name="txtencontrado" Text="Encontrado" Margin="15" RelativePanel.RightOf="camera" Visibility="Collapsed"/>
+                </RelativePanel>
+        </RelativePanel>
+            
+            <!--PROGRESS RING-->
+            <RelativePanel Name="ProgressRing" RelativePanel.RightOf="progressbar" Margin="15" BorderBrush="Red" BorderThickness="2">
+                <Border Name="titulopr" BorderBrush="Black" BorderThickness="1">
+                    <TextBlock  Text="PROGRESS RING" FontSize="35"/>
+                </Border>
+                
+
+                <Button Name="ConectServer" Content="Conectar Server" Click="ConectServer_Click" RelativePanel.Below="titulopr" RelativePanel.AlignHorizontalCenterWithPanel="True"/>
+                <ProgressRing Name="progressring" IsActive="False" RelativePanel.Below="ConectServer" RelativePanel.AlignHorizontalCenterWithPanel="True" Margin="15"/>
+                <Button Name="conectado" Content="¿Estas Conectado?" RelativePanel.Below="progressring" RelativePanel.AlignHorizontalCenterWithPanel="True" Visibility="Collapsed" Click="conectado_Click"/>
+                <TextBlock Name="felicidades" Visibility="Collapsed" Margin="15" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.Below="titulopr" Text="FELICIDADES" FontSize="35"/>
+            </RelativePanel>    
+        
+        </RelativePanel>
+    </Grid>
+</Page>

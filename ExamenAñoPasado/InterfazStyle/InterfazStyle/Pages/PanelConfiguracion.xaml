@@ -1,0 +1,100 @@
+﻿<Page
+    x:Class="InterfazStyle.Pages.PanelConfiguracion"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:InterfazStyle.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="LightBlue">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="AUTO"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <CommandBar Grid.Row="0" Visibility="Visible">
+            <AppBarButton IsEnabled="False" />
+            <CommandBar.SecondaryCommands>
+                <AppBarButton Label="Cerrar Sesion" Click="AppBarButton_Click"></AppBarButton>
+            </CommandBar.SecondaryCommands>
+        </CommandBar>
+
+
+        <Pivot Grid.Row="1" >
+            <!--Section for favs-->
+            <PivotItem  x:Name="favoritos" Header="Favoritos" >
+                <StackPanel>
+                    <TextBlock Style="{StaticResource tituloPivot}" Text="Favoritos"/>
+
+                    <ListBox Background="TEAL">
+
+                        <ListBoxItem HorizontalAlignment="Center"  >
+                            <RelativePanel>
+                                <TextBlock Name="lblluzsalon" Text="·Luz Salon" Margin="20,20,20,0" Foreground="White"></TextBlock>
+                                <TextBlock Text="→"  Foreground="White" Margin="59,20,20,0" RelativePanel.AlignRightWith="lblluzsalon"></TextBlock>
+                                <Slider Name="luzsalon" RelativePanel.Below="lblluzsalon" Background="White" Margin="20" Minimum="0" Maximum="100" TickFrequency="10" SnapsTo="StepValues" TickPlacement="BottomRight" MinWidth="250" />
+                            </RelativePanel>
+                        </ListBoxItem>
+                        
+                        <ListBoxItem HorizontalAlignment="Center" >
+                                    <RelativePanel>
+                                        <TextBlock Name="lblluzpatio" Text="·Luz Patio" Margin="20"  Foreground="White"></TextBlock>
+                                        <TextBlock Text="→" Margin="60,20,20,20"  Foreground="White" RelativePanel.RightOf="lblluzpatio"></TextBlock>
+                                        <Slider Name="luzpatio" RelativePanel.Below="lblluzpatio" Background="White" Margin="20" Minimum="0" Maximum="100" TickFrequency="10" SnapsTo="StepValues" TickPlacement="BottomRight" MinWidth="250" />
+                                </RelativePanel>
+                        </ListBoxItem>
+                        
+                        <ListBoxItem HorizontalAlignment="Center" >
+                        <RelativePanel >
+                                    <TextBlock Name="lblpersianasalon" Text="·Persiana Salon" Margin="20"  Foreground="White"></TextBlock>
+                                    <TextBlock Text="→" Margin="20"  Foreground="White" RelativePanel.RightOf="lblpersianasalon"></TextBlock>
+                                    <Slider Name="persianasalon" RelativePanel.Below="lblpersianasalon" Background="White" Margin="20" Minimum="0" Maximum="100" TickFrequency="10" SnapsTo="StepValues" TickPlacement="BottomRight" MinWidth="250" />
+                                </RelativePanel>
+                        </ListBoxItem>
+                
+                
+                        
+                    </ListBox>
+
+                    <RelativePanel VerticalAlignment="Bottom" HorizontalAlignment="Center">
+                        <Button x:Name="seguridad" Content="Seguridad"></Button>
+                        <Button x:Name="nocturno" RelativePanel.RightOf="seguridad" RelativePanel.AlignVerticalCenterWithPanel="True" Content="Nocturno"></Button>
+                        <Button x:Name="energetico" RelativePanel.RightOf="nocturno" RelativePanel.AlignVerticalCenterWithPanel="True" Content="Energetico"></Button>
+                        <Button RelativePanel.AlignVerticalCenterWithPanel="True" Content="+" RelativePanel.RightOf="energetico" ></Button>
+                    </RelativePanel>
+                    
+                    
+                </StackPanel>
+
+            
+
+            </PivotItem>
+            
+            <!--Section for ligths-->
+            <PivotItem x:Name="luces" Header="Luces">
+                <TextBlock Style="{StaticResource tituloPivot}" Text="Luces"/>
+
+            </PivotItem>
+            
+            <!--Section for blind-->
+            <PivotItem x:Name="persianas" Header="Persianas">
+                <TextBlock Style="{StaticResource tituloPivot}" Text="Persianas"/>
+                
+            </PivotItem>
+                
+
+            <!--Section for alarm-->
+            <PivotItem x:Name="alarma" Header="Alarma">
+                <TextBlock Style="{StaticResource tituloPivot}" Text="Alarma"/>
+            </PivotItem>
+            
+            <!--Section for Cam-->
+            <PivotItem x:Name="camaras" Header="Cámaras">
+                <TextBlock Style="{StaticResource tituloPivot}" Text="Cámaras"/>
+            </PivotItem>
+        </Pivot>
+
+
+    </Grid>
+</Page>

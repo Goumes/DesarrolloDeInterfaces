@@ -1,0 +1,17 @@
+﻿<Page
+    x:Class="InterfazStyle.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:InterfazStyle"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <RelativePanel Background="LightBlue">
+
+        <Image Source="../Assets/logo.png" x:Name="image" Style="{StaticResource Image}"></Image>
+        <TextBox x:Name="User" PlaceholderText="Usuario..." Style="{StaticResource textPrincipal}" RelativePanel.Below="image"></TextBox>
+        <TextBox x:Name="Passw" PlaceholderText="Contraseña..." Style="{StaticResource textPrincipal}" RelativePanel.Below="User"></TextBox>
+        <Button x:Name="iniciar" RelativePanel.Below="Passw" RelativePanel.AlignHorizontalCenterWithPanel="True" Content="Iniciar Sesion" Click="iniciar_Click"></Button>
+    </RelativePanel>
+</Page>
