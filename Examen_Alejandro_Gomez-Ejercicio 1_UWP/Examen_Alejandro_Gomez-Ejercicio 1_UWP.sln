@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.16
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Examen_Alejandro_Gomez-Ejercicio 1_UWP", "Examen_Alejandro_Gomez-Ejercicio 1_UWP\Examen_Alejandro_Gomez-Ejercicio 1_UWP.csproj", "{D10DBBAE-B96F-409D-A950-2010C2A3D9C9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|ARM = Debug|ARM
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|ARM = Release|ARM
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D10DBBAE-B96F-409D-A950-2010C2A3D9C9}.Debug|ARM.ActiveCfg = Debug|ARM
+		{D10DBBAE-B96F-409D-A950-2010C2A3D9C9}.Debug|ARM.Build.0 = Debug|ARM
+		{D10DBBAE-B96F-409D-A950-2010C2A3D9C9}.Debug|ARM.Deploy.0 = Debug|ARM
+		{D10DBBAE-B96F-409D-A950-2010C2A3D9C9}.Debug|x64.ActiveCfg = Debug|x64
+		{D10DBBAE-B96F-409D-A950-2010C2A3D9C9}.Debug|x64.Build.0 = Debug|x64
+		{D10DBBAE-B96F-409D-A950-2010C2A3D9C9}.Debug|x64.Deploy.0 = Debug|x64
+		{D10DBBAE-B96F-409D-A950-2010C2A3D9C9}.Debug|x86.ActiveCfg = Debug|x86
+		{D10DBBAE-B96F-409D-A950-2010C2A3D9C9}.Debug|x86.Build.0 = Debug|x86
+		{D10DBBAE-B96F-409D-A950-2010C2A3D9C9}.Debug|x86.Deploy.0 = Debug|x86
+		{D10DBBAE-B96F-409D-A950-2010C2A3D9C9}.Release|ARM.ActiveCfg = Release|ARM
+		{D10DBBAE-B96F-409D-A950-2010C2A3D9C9}.Release|ARM.Build.0 = Release|ARM
+		{D10DBBAE-B96F-409D-A950-2010C2A3D9C9}.Release|ARM.Deploy.0 = Release|ARM
+		{D10DBBAE-B96F-409D-A950-2010C2A3D9C9}.Release|x64.ActiveCfg = Release|x64
+		{D10DBBAE-B96F-409D-A950-2010C2A3D9C9}.Release|x64.Build.0 = Release|x64
+		{D10DBBAE-B96F-409D-A950-2010C2A3D9C9}.Release|x64.Deploy.0 = Release|x64
+		{D10DBBAE-B96F-409D-A950-2010C2A3D9C9}.Release|x86.ActiveCfg = Release|x86
+		{D10DBBAE-B96F-409D-A950-2010C2A3D9C9}.Release|x86.Build.0 = Release|x86
+		{D10DBBAE-B96F-409D-A950-2010C2A3D9C9}.Release|x86.Deploy.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FB650A04-9AC4-400B-97E5-BC89CC105A85}
+	EndGlobalSection
+EndGlobal

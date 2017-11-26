@@ -1,0 +1,108 @@
+﻿<Page
+    x:Class="Examen_Alejandro_Gomez_Ejercicio_1_UWP.Views.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Examen_Alejandro_Gomez_Ejercicio_1_UWP"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm ="using:Examen_Alejandro_Gomez_Ejercicio_1_UWP.ViewModels"
+    MinWidth="1280"
+    MinHeight="720"
+    mc:Ignorable="d">
+    <!-- He puesto la altura y la anchura estáticas para que se guarde la relación del grid donde pongo las marcas de acierto-->
+
+    <Page.DataContext>
+        <vm:MainPageVM></vm:MainPageVM>
+    </Page.DataContext>
+    
+
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="7*"/>
+        </Grid.RowDefinitions>
+        
+        <TextBlock x:Name="textoGanador" Grid.ColumnSpan="2" Grid.Row="0" HorizontalAlignment="Center" Text="Has ganado!" FontSize="30" Visibility="Collapsed"/>
+
+        <Image Source="/Imagenes/Diferencias.jpg" Grid.Column="0" Margin="10" Grid.Row="1"/>
+        <Grid Grid.Row="1" x:Name="relativeDiferencias">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Ellipse x:Name="diferencia1_1" Grid.Row="1" Grid.Column="1" Grid.RowSpan="2" Stroke="Red"  StrokeThickness="10" Opacity="0" MaxHeight="100" PointerPressed="comprobarDiferencias"/> <!-- No consigo bindear el PointerPressed con el viewModel, asi que lo haré por behind -->
+            <Ellipse x:Name="diferencia2_1" Grid.Row="4" Grid.Column="2" Stroke="Red"  StrokeThickness="10" Opacity="0" PointerPressed="comprobarDiferencias"/>
+            <Ellipse x:Name="diferencia3_1" Grid.Row="2" Grid.Column="3" Stroke="Red"  StrokeThickness="10" Opacity="0" MaxWidth="40" MaxHeight="40" PointerPressed="comprobarDiferencias"/>
+            <StackPanel Grid.Row="2" Grid.Column="4" Orientation="Vertical">
+                <Ellipse x:Name="diferencia4_1"  Stroke="Red" StrokeThickness="10" MinWidth="40" MaxWidth="40" MinHeight="40" MaxHeight="40" Opacity="0" Margin="30,0,0,0" PointerPressed="comprobarDiferencias"/>
+                <Ellipse x:Name="diferencia5_1" Stroke="Red" StrokeThickness="10" MinWidth="40" MaxWidth="40" MinHeight="40" MaxHeight="40" Opacity="0" Margin="0,20,0,0" PointerPressed="comprobarDiferencias"/>
+            </StackPanel>
+            <Ellipse x:Name="diferencia6_1" Grid.Row="2" Grid.Column="5" Opacity="0" Stroke="Red" StrokeThickness="10" MinWidth="60" MaxWidth="60" MinHeight="60" MaxHeight="60" Margin="10,0,0,40" PointerPressed="comprobarDiferencias"/>
+            <Ellipse x:Name="diferencia7_1" Grid.Row="2" Grid.Column="6" Opacity="0" Stroke="Red" StrokeThickness="10" MinWidth="60" MaxWidth="60" MinHeight="60" MaxHeight="60" PointerPressed="comprobarDiferencias"/>
+
+
+
+        </Grid>
+        <Image Source="/Imagenes/Diferencias2.jpg" Grid.Column="1" Margin="10" Grid.Row="1">
+            
+        </Image>
+        <Grid Grid.Row="1" Grid.Column="1" x:Name="relativeDiferencias2">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Ellipse x:Name="diferencia1_2" Grid.Row="1" Grid.Column="1" Grid.RowSpan="2" MaxHeight="100" Opacity="0" Stroke="Red"  StrokeThickness="10"/>
+            <Ellipse x:Name="diferencia2_2" Grid.Row="4" Grid.Column="2" Opacity="0" Stroke="Red"  StrokeThickness="10"/>
+            <Ellipse x:Name="diferencia3_2" Grid.Row="2" Grid.Column="3" Opacity="0" Stroke="Red"  StrokeThickness="10"/>
+            <StackPanel Grid.Row="2" Grid.Column="4" Orientation="Vertical">
+                <Ellipse x:Name="diferencia4_2"  Opacity="0"  Stroke="Red"  StrokeThickness="10" MinWidth="40" MaxWidth="40" MinHeight="40" MaxHeight="40" Margin="30,0,0,0"/>
+                <Ellipse x:Name="diferencia5_2"  Opacity="0" Stroke="Red"  StrokeThickness="10" MinWidth="40" MaxWidth="40" MinHeight="40" MaxHeight="40" Margin="0,20,0,0"/>
+            </StackPanel>
+            <Ellipse x:Name="diferencia6_2" Grid.Row="2"  Opacity="0" Grid.Column="5" Stroke="Red"  StrokeThickness="10" MinWidth="60" MaxWidth="60" MinHeight="60" MaxHeight="60" Margin="10,0,0,40"/>
+            <Ellipse x:Name="diferencia7_2" Grid.Row="2"  Opacity="0" Grid.Column="6" Stroke="Red"  StrokeThickness="10" MinWidth="60" MaxWidth="60" MinHeight="60" MaxHeight="60"/>
+
+
+
+
+        </Grid>
+    </Grid>
+</Page>
