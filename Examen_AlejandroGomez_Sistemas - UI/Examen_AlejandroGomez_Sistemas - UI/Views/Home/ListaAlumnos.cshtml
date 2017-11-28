@@ -1,0 +1,70 @@
+﻿@model IEnumerable<Examen_AlejandroGomez_Sistemas___ET.clsAlumno>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ListaAlumnos</title>
+</head>
+<body>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.idAlumno)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.nombreAlumno)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.apellidosAlumno)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.idCurso)
+            </th>
+            <!--
+            <th>
+                Html.DisplayNameFor(model => model.beca)
+            </th>
+                -->
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.idAlumno)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nombreAlumno)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.apellidosAlumno)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.idCurso)
+            </td>
+
+            <td>
+                @Html.ActionLink("Asignar beca", "Beca", new { id = item.idAlumno })
+            </td>
+
+            <!--
+            <td>
+                Html.DisplayFor(modelItem => item.beca)
+            </td>
+                -->
+        </tr>
+    }
+
+
+    
+    </table>
+    <br />
+    @Html.ActionLink("Volver a seleccionar curso", "Index", new { id = 1 })
+</body>
+</html>

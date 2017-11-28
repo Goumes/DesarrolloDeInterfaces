@@ -1,0 +1,28 @@
+﻿@model Examen_AlejandroGomez_Sistemas___UI.Models.clsListadoCursos
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div> 
+        <h1>Selecciona un curso</h1>
+        <form action="" method="post">
+
+            @Html.DropDownListFor(model => model.idCurso, new SelectList(Model.cursos, "idCurso", "nombreCurso"))
+
+            <input type="submit" name="enviar" value="Enviar" />
+
+
+           <!-- <select resource="Model.cursos" name="cursos"></select> -->
+        </form>
+    </div>
+</body>
+</html>
