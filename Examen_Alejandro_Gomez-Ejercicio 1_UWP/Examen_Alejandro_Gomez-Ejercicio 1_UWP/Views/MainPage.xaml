@@ -90,15 +90,15 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
-            <Ellipse x:Name="diferencia1_2" Grid.Row="1" Grid.Column="1" Grid.RowSpan="2" MaxHeight="100" Opacity="0" Stroke="Red"  StrokeThickness="10"/>
-            <Ellipse x:Name="diferencia2_2" Grid.Row="4" Grid.Column="2" Opacity="0" Stroke="Red"  StrokeThickness="10"/>
-            <Ellipse x:Name="diferencia3_2" Grid.Row="2" Grid.Column="3" Opacity="0" Stroke="Red"  StrokeThickness="10"/>
+            <Ellipse x:Name="diferencia1_2" Grid.Row="1" Grid.Column="1" Grid.RowSpan="2" MaxHeight="100" Opacity="{Binding Opacity, ElementName=diferencia1_1}" Stroke="Red"  StrokeThickness="10"/>
+            <Ellipse x:Name="diferencia2_2" Grid.Row="4" Grid.Column="2" Opacity="{Binding Opacity, ElementName=diferencia2_1}" Stroke="Red"  StrokeThickness="10"/>
+            <Ellipse x:Name="diferencia3_2" Grid.Row="2" Grid.Column="3" Opacity="{Binding Opacity, ElementName=diferencia3_1}" Stroke="Red"  StrokeThickness="10"/>
             <StackPanel Grid.Row="2" Grid.Column="4" Orientation="Vertical">
-                <Ellipse x:Name="diferencia4_2"  Opacity="0"  Stroke="Red"  StrokeThickness="10" MinWidth="40" MaxWidth="40" MinHeight="40" MaxHeight="40" Margin="30,0,0,0"/>
-                <Ellipse x:Name="diferencia5_2"  Opacity="0" Stroke="Red"  StrokeThickness="10" MinWidth="40" MaxWidth="40" MinHeight="40" MaxHeight="40" Margin="0,20,0,0"/>
+                <Ellipse x:Name="diferencia4_2"  Opacity="{Binding Opacity, ElementName=diferencia4_1}"  Stroke="Red"  StrokeThickness="10" MinWidth="40" MaxWidth="40" MinHeight="40" MaxHeight="40" Margin="30,0,0,0"/>
+                <Ellipse x:Name="diferencia5_2"  Opacity="{Binding Opacity, ElementName=diferencia5_1}" Stroke="Red"  StrokeThickness="10" MinWidth="40" MaxWidth="40" MinHeight="40" MaxHeight="40" Margin="0,20,0,0"/>
             </StackPanel>
-            <Ellipse x:Name="diferencia6_2" Grid.Row="2"  Opacity="0" Grid.Column="5" Stroke="Red"  StrokeThickness="10" MinWidth="60" MaxWidth="60" MinHeight="60" MaxHeight="60" Margin="10,0,0,40"/>
-            <Ellipse x:Name="diferencia7_2" Grid.Row="2"  Opacity="0" Grid.Column="6" Stroke="Red"  StrokeThickness="10" MinWidth="60" MaxWidth="60" MinHeight="60" MaxHeight="60"/>
+            <Ellipse x:Name="diferencia6_2" Grid.Row="2"  Opacity="{Binding Opacity, ElementName=diferencia6_1}" Grid.Column="5" Stroke="Red"  StrokeThickness="10" MinWidth="60" MaxWidth="60" MinHeight="60" MaxHeight="60" Margin="10,0,0,40"/>
+            <Ellipse x:Name="diferencia7_2" Grid.Row="2"  Opacity="{Binding Opacity, ElementName=diferencia7_1}" Grid.Column="6" Stroke="Red"  StrokeThickness="10" MinWidth="60" MaxWidth="60" MinHeight="60" MaxHeight="60"/>
 
 
 

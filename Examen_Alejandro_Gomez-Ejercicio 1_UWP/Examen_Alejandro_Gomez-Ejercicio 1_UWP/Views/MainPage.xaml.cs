@@ -43,52 +43,11 @@ namespace Examen_Alejandro_Gomez_Ejercicio_1_UWP.Views
         {
             Ellipse ellipse = (Ellipse) sender;
 
-            switch (ellipse.Name)
+            if (ellipse.Opacity == 0)
             {
-                case "diferencia1_1":
-                    diferencia1_1.Opacity = 100;
-                    diferencia1_2.Opacity = 100;
-                    numeroAciertos++;
-                break;
-
-               
-                case "diferencia2_1":
-                    diferencia2_1.Opacity = 100;
-                    diferencia2_2.Opacity = 100;
-                    numeroAciertos++;
-                    break;
-
-                case "diferencia3_1":
-                    diferencia3_1.Opacity = 100;
-                    diferencia3_2.Opacity = 100;
-                    numeroAciertos++;
-                    break;
-
-                case "diferencia4_1":
-                    diferencia4_1.Opacity = 100;
-                    diferencia4_2.Opacity = 100;
-                    numeroAciertos++;
-                    break;
-
-                case "diferencia5_1":
-                    diferencia5_1.Opacity = 100;
-                    diferencia5_2.Opacity = 100;
-                    numeroAciertos++;
-                    break;
-
-                case "diferencia6_1":
-                    diferencia6_1.Opacity = 100;
-                    diferencia6_2.Opacity = 100;
-                    numeroAciertos++;
-                    break;
-
-                case "diferencia7_1":
-                    diferencia7_1.Opacity = 100;
-                    diferencia7_2.Opacity = 100;
-                    numeroAciertos++;
-                    break;
+                ellipse.Opacity = 100;
+                numeroAciertos++;
             }
-            
 
             if (numeroAciertos == 7)
             {
