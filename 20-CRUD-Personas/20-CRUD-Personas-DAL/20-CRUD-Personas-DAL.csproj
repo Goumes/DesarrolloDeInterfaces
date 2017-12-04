@@ -107,6 +107,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Conexion\clsMyConnection.cs" />
+    <Compile Include="Listados\clsListadoDepartamentosDAL.cs" />
+    <Compile Include="Listados\clsListadoPersonasDAL.cs" />
     <Compile Include="Manejadoras\clsGestoraDepartamentoDAL.cs" />
     <Compile Include="Manejadoras\clsGestoraPersonaDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -123,9 +125,7 @@
       <Name>20-CRUD-Personas-ET</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Listados\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

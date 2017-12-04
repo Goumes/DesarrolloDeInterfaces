@@ -1,4 +1,5 @@
-﻿using _20_CRUD_Personas_ET;
+﻿using _20_CRUD_Personas_DAL.Conexion;
+using _20_CRUD_Personas_ET;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;

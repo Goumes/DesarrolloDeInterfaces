@@ -108,6 +108,8 @@
   <ItemGroup>
     <Compile Include="clsDepartamento.cs" />
     <Compile Include="clsPersona.cs" />
+    <Compile Include="clsVMBase.cs" />
+    <Compile Include="DelegateCommand.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\_20_CRUD_Personas_ET.rd.xml" />
   </ItemGroup>

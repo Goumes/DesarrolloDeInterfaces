@@ -11,7 +11,7 @@ namespace _20_CRUD_Personas_ET
         public int idDepartamento { get; set; }
         public string nombre { get; set; }
 
-        public clsDepartamento()
+        public clsDepartamento()   
         {
             this.idDepartamento = 1;
             this.nombre = "";
