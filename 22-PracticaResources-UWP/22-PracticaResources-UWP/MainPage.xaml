@@ -1,0 +1,22 @@
+﻿<Page
+    x:Class="_22_PracticaResources_UWP.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:_22_PracticaResources_UWP"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+        <LinearGradientBrush x:Key="buttonBackground">
+            <GradientStop Offset="0" Color="Silver"/>
+            <GradientStop Offset="1" Color="Orange"/>
+        </LinearGradientBrush>
+    </Page.Resources>
+
+    <RelativePanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Button x:Name="btn1" Background="{StaticResource buttonBackground}" MinWidth="100" MinHeight="100"/>
+        <Button x:Name="btn2" Background="{StaticResource buttonBackground2}" MinWidth="100" MinHeight="100" RelativePanel.RightOf="btn1"/>
+        <Button x:Name="btn3" Background="{StaticResource buttonBackground3}" MinWidth="100" MinHeight="100" RelativePanel.RightOf="btn2"/>
+    </RelativePanel>
+</Page>
