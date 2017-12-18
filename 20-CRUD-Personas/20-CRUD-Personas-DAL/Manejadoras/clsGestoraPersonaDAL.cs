@@ -138,12 +138,13 @@ namespace _20_CRUD_Personas_DAL.Manejadoras
             SqlConnection conexion;
             SqlCommand miComando = new SqlCommand();
             clsMyConnection miConexion = new clsMyConnection(); ;
-            miComando.CommandText = "INSERT INTO personas (nombre, apellidos, fechaNac, direccion, telefono) VALUES (@nombre, @apellidos, @fechaNac, @direccion, @telefono)";
+            miComando.CommandText = "INSERT INTO personas (nombre, apellidos, fechaNac, direccion, telefono, idDepartamento) VALUES (@nombre, @apellidos, @fechaNac, @direccion, @telefono, @idDepartamento)";
             miComando.Parameters.Add("@nombre", System.Data.SqlDbType.VarChar).Value = persona.nombre;
             miComando.Parameters.Add("@apellidos", System.Data.SqlDbType.VarChar).Value = persona.apellidos;
             miComando.Parameters.Add("@fechaNac", System.Data.SqlDbType.Date).Value = persona.fechaNac;
             miComando.Parameters.Add("@direccion", System.Data.SqlDbType.VarChar).Value = persona.direccion;
             miComando.Parameters.Add("@telefono", System.Data.SqlDbType.VarChar).Value = persona.telefono;
+            miComando.Parameters.Add("@idDepartamento", System.Data.SqlDbType.Int).Value = 2;
 
 
             try

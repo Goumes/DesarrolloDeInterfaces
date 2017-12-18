@@ -27,6 +27,7 @@ namespace _11_Ejercicio_Currao_UWP.ViewModels
         public clsMainPageVM ()
         {
             clsListadoPersonas personas = new clsListadoPersonas();
+            _personaSeleccionada = new clsPersona();
             _listadoPersonas = personas.personas;
         }
         #endregion
@@ -55,7 +56,11 @@ namespace _11_Ejercicio_Currao_UWP.ViewModels
 
             set
             {
-                _personaSeleccionada = value;
+                if (value != _personaSeleccionada)
+                {
+                    _personaSeleccionada = value;
+                }
+
                NotifyPropertyChanged("personaSeleccionada");
             }
         }

@@ -6,7 +6,12 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:vm ="using:_11_Ejercicio_Currao_UWP.ViewModels"
+    xmlns:conv ="using:_11_Ejercicio_Currao_UWP.Models.Entities"
     mc:Ignorable="d">
+
+    <Page.Resources>
+        <conv:ConversorPersona x:Key="conversorPersona"></conv:ConversorPersona>
+    </Page.Resources>
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <VisualStateManager.VisualStateGroups>
@@ -46,7 +51,7 @@
         </Grid.RowDefinitions>
 
         <ScrollViewer x:Name="scrollViewer">
-            <ListView Grid.Column="0" ItemsSource="{x:Bind ViewModel.listado}" SelectedIndex="{x:Bind ViewModel.indicePersonaSeleccionada, Mode=TwoWay}">
+            <ListView Grid.Column="0" ItemsSource="{x:Bind ViewModel.listado}" SelectedIndex="{x:Bind ViewModel.personaSeleccionada, Converter={StaticResource conversorPersona}, Mode=TwoWay}">
                 <ListView.ItemTemplate>
                     <DataTemplate x:DataType="x:String">
                         <StackPanel Orientation="Horizontal">

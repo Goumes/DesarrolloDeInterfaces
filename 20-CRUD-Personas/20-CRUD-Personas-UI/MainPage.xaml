@@ -6,11 +6,16 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:vm ="using:_20_CRUD_Personas_UI.ViewModels"
+    xmlns:conv="using:_20_CRUD_Personas_ET"
     mc:Ignorable="d">
 
     <Page.DataContext>
         <vm:clsMainPageVM></vm:clsMainPageVM>
     </Page.DataContext>
+
+    <Page.Resources>
+        <conv:ConverterFecha x:Key="converterFecha"></conv:ConverterFecha>
+    </Page.Resources>
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <VisualStateManager.VisualStateGroups>
@@ -56,6 +61,7 @@
             <AppBarButton Icon="Add" Label="Añadir" Command="{Binding addCommand}"/>
             <AppBarButton Icon="Save" Label="Guardar" Command="{Binding saveCommand}" Click="btn_Click"/>
             <AppBarButton Icon="Delete" Label="Borrar" Command="{Binding borrarCommand}"/>
+            <AppBarButton Icon="Refresh" Label="Actualizar" Command="{Binding updateCommand}"></AppBarButton>
         </StackPanel>
 
         <TextBox x:Name="txbBusqueda" PlaceholderText="Busqueda..." TextWrapping="Wrap" Text="{Binding textoBusqueda, Mode =TwoWay, UpdateSourceTrigger=PropertyChanged}"></TextBox>
@@ -96,7 +102,7 @@
             <TextBox x:Name="txbApellidos" Grid.Row="1" Grid.Column="1" Background="White" Margin="10" Text="{Binding apellidos, Mode=TwoWay, UpdateSourceTrigger=Explicit}"/>
 
             <TextBlock x:Name="textBlock2" Text="Fecha de Nacimiento:" FontSize="30" Grid.Row="2" Margin="10"/>
-            <TextBox x:Name="txbFechaNacimiento" Grid.Row="2" Grid.Column="1" Background="White" Margin="10" Text="{Binding fechaNac, Mode=TwoWay, UpdateSourceTrigger=Explicit}" />
+            <TextBox x:Name="txbFechaNacimiento" Grid.Row="2" Grid.Column="1" Background="White" Margin="10" Text="{Binding fechaNac, Mode=TwoWay, UpdateSourceTrigger=Explicit, Converter= {StaticResource converterFecha}}" />
 
             <TextBlock x:Name="textBlock3" Text="Telefono:" FontSize="30" Grid.Row="3" Margin="10"/>
             <TextBox x:Name="txbTelefono" Grid.Row="3" Grid.Column="1" Background="White" Margin="10" Text ="{Binding telefono, Mode=TwoWay, UpdateSourceTrigger=Explicit}"/>

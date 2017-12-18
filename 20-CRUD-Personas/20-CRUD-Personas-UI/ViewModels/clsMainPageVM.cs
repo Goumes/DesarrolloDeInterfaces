@@ -7,6 +7,8 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Windows.UI.Popups;
+using Windows.UI.Xaml;
 
 namespace _20_CRUD_Personas_UI.ViewModels
 {
@@ -21,6 +23,7 @@ namespace _20_CRUD_Personas_UI.ViewModels
         private DelegateCommand _saveCommand;
         private DelegateCommand _addCommand;
         private DelegateCommand _buscarCommand;
+        private DelegateCommand _updateCommand;
 
         #endregion
 
@@ -31,6 +34,7 @@ namespace _20_CRUD_Personas_UI.ViewModels
             _listadoPersonas = new ObservableCollection <clsPersona> (listadoPersonasBL.getListadoPersonasBL());
             _listadoAuxiliar = _listadoPersonas;
             _textoBusqueda = "";
+            DispatcherTimerSample();
         }
         #endregion
 
@@ -86,6 +90,20 @@ namespace _20_CRUD_Personas_UI.ViewModels
                 _textoBusqueda = value;
                 _buscarCommand.RaiseCanExecuteChanged();
                 //NotifyPropertyChanged("textoBusqueda");
+            }
+        }
+
+        public DelegateCommand updateCommand
+        {
+            get
+            {
+                _updateCommand = new DelegateCommand(update);
+                return _updateCommand;
+            }
+
+            set
+            {
+                _updateCommand = value;
             }
         }
 
@@ -168,11 +186,13 @@ namespace _20_CRUD_Personas_UI.ViewModels
         /// </summary>
         public void borrar()
         {
-            clsGestoraPersonaBL gestoraPersonaBL = new clsGestoraPersonaBL();
-            clsListadoPersonasBL listadoPersonasBL = new clsListadoPersonasBL();
-            gestoraPersonaBL.getBorrarPersona(personaSeleccionada.idPersona);
-            _listadoAuxiliar = new ObservableCollection <clsPersona> (listadoPersonasBL.getListadoPersonasBL());
-            NotifyPropertyChanged("listadoAuxiliar");
+
+            String titulo, content;
+            titulo = "Borrar una persona";
+            content = "¿Estas seguro, crack?";
+
+            DisplayDialog (titulo, content);
+
             //listado.Remove(_personaSeleccionada);
         }
 
@@ -199,10 +219,18 @@ namespace _20_CRUD_Personas_UI.ViewModels
         {
             if (_personaSeleccionada.idPersona == 0)
             {
+                /*
                 _personaSeleccionada.idPersona = listado.ElementAt(listado.Count - 1).idPersona + 1;
                 NotifyPropertyChanged("personaSeleccionada");
                 listado.Add(_personaSeleccionada);
                 NotifyPropertyChanged("listado");
+                */
+                clsGestoraPersonaBL gestoraPersonaBL = new clsGestoraPersonaBL();
+                clsListadoPersonasBL listadoPersonasBL = new clsListadoPersonasBL();
+                //_personaSeleccionada.idPersona = _listadoAuxiliar.ElementAt(listado.Count - 1).idPersona + 1;
+                gestoraPersonaBL.getAddPersona(_personaSeleccionada);
+                _listadoAuxiliar = new ObservableCollection<clsPersona>(listadoPersonasBL.getListadoPersonasBL());
+                NotifyPropertyChanged("listadoAuxiliar");
             }
         }
 
@@ -213,6 +241,16 @@ namespace _20_CRUD_Personas_UI.ViewModels
         {
             _personaSeleccionada = new clsPersona();
             NotifyPropertyChanged("personaSeleccionada");
+        }
+
+        /// <summary>
+        /// Metodo que actualiza la lista
+        /// </summary>
+        public void update()
+        {
+            clsListadoPersonasBL listadoPersonasBL = new clsListadoPersonasBL();
+            _listadoAuxiliar = new ObservableCollection<clsPersona>(listadoPersonasBL.getListadoPersonasBL());
+            NotifyPropertyChanged("listadoAuxiliar");
         }
 
         public void buscar()
@@ -245,6 +283,46 @@ namespace _20_CRUD_Personas_UI.ViewModels
             }
 
             return puede;
+        }
+
+        public void DispatcherTimerSample()
+        {
+            DispatcherTimer timer = new DispatcherTimer();
+            timer.Interval = TimeSpan.FromSeconds(30);
+            timer.Tick += timer_tick;
+            timer.Start();
+        }
+
+        private void timer_tick(Object sender, object e)
+        {
+            update();
+        }
+
+        private async void DisplayDialog(String titulo, String nombre)
+        {
+            clsGestoraPersonaBL gestoraPersonaBL = new clsGestoraPersonaBL();
+            clsListadoPersonasBL listadoPersonasBL = new clsListadoPersonasBL();
+
+            MessageDialog showDialog = new MessageDialog(titulo);
+            showDialog.Content = titulo + "\n" + nombre;
+            showDialog.Commands.Add(new UICommand("Si") { Id = 0 });
+            showDialog.Commands.Add(new UICommand("No") { Id = 1 });
+            showDialog.DefaultCommandIndex = 0;
+            showDialog.DefaultCommandIndex = 1;
+            var result = await showDialog.ShowAsync();
+
+            if ((int)result.Id == 0)
+            {
+
+                gestoraPersonaBL.getBorrarPersona(personaSeleccionada.idPersona);
+                _listadoAuxiliar = new ObservableCollection<clsPersona>(listadoPersonasBL.getListadoPersonasBL());
+                NotifyPropertyChanged("listadoAuxiliar");
+            }
+
+            else
+            {
+                //nanai
+            }
         }
         #endregion
     }
