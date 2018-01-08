@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\WEB-API.Personas-CORE-DAL\WEB-API.Personas-CORE-DAL.csproj" />
+    <ProjectReference Include="..\WEB-API.Personas-CORE-Entidades\WEB-API.Personas-CORE-Entidades.csproj" />
+  </ItemGroup>
+
+</Project>

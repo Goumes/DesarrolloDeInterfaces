@@ -1,0 +1,56 @@
+﻿<Page
+    x:Class="_23_Styles_UWP.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:_23_Styles_UWP"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+        
+        <Style x:Key="estiloBoton" TargetType="Button">
+            <Setter Property="Control.FontFamily" Value="Times New Roman" />
+            <Setter Property="Control.FontSize" Value="24" />
+            <Setter Property="Control.Margin" Value="50,0,0,20" />
+            <Setter Property="Control.Padding" Value="20" />
+            <Setter Property="Control.Background" Value="Beige" />
+            <Setter Property="Control.Foreground" Value="Black" />
+            <Setter Property="Control.FontWeight" Value="Bold" />
+        </Style>
+
+        <Style x:Key="estiloBoton2" BasedOn="{StaticResource estiloBoton}"  TargetType="Button">
+            <Setter Property="Control.Background" Value="Green" />
+            <Setter Property="Control.Margin" Value="50,30,0,20" />
+            <Setter Property="RenderTransform">
+                <Setter.Value>
+                    <RotateTransform Angle="25"/>
+                </Setter.Value>
+            </Setter>
+
+        </Style>
+    </Page.Resources>
+
+    <StackPanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Button Content="K pasa cracks"  Style="{StaticResource estiloBoton}"/>
+        <Button x:Name ="btnLocura" Content="K pasa cracks" Style="{StaticResource estiloBoton2}" Click="Button_Click" HorizontalAlignment="Center">
+            <Button.RenderTransform>
+                <RotateTransform x:Name="PhotoButtonRotateTransform"/>
+            </Button.RenderTransform>
+        </Button>
+
+        <Button x:Name ="btnLocura2" Background="Red" Content="K pasa cracks" Style="{StaticResource estiloBoton2}" Click="Button_Click" HorizontalAlignment="Center">
+            <Button.RenderTransform>
+                <RotateTransform x:Name="PhotoButtonRotateTransform2"/>
+            </Button.RenderTransform>
+        </Button>
+
+        <Button x:Name ="btnLocura3" Background="Purple" Content="K pasa cracks" Style="{StaticResource estiloBoton2}" Click="Button_Click" HorizontalAlignment="Center">
+            <Button.RenderTransform>
+                <RotateTransform x:Name="PhotoButtonRotateTransform3"/>
+            </Button.RenderTransform>
+        </Button>
+
+        <Button x:Name ="btnLocura4" Background="Yellow" Content="K pasa cracks" Style="{StaticResource estiloBoton2}" Click="Button_Click" HorizontalAlignment="Center"/>
+    </StackPanel>
+</Page>

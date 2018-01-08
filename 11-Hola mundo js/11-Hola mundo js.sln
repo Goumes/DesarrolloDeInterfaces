@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2010
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "11-Hola mundo js", "..\..\..\Sistemas de gestión empresarial\Repositorio\11-Hola mundo js\", "{3C016E8D-E9ED-44BD-8273-90BA21C8533F}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.6.1"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_58525"
+		Debug.AspNetCompiler.PhysicalPath = "..\..\..\Sistemas de gestión empresarial\Repositorio\11-Hola mundo js\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_58525\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_58525"
+		Release.AspNetCompiler.PhysicalPath = "..\..\..\Sistemas de gestión empresarial\Repositorio\11-Hola mundo js\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_58525\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "58525"
+		SlnRelativePath = "..\..\..\Sistemas de gestión empresarial\Repositorio\11-Hola mundo js\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3C016E8D-E9ED-44BD-8273-90BA21C8533F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C016E8D-E9ED-44BD-8273-90BA21C8533F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3B380E45-F2BC-4DDF-941A-FBB7978FB697}
+	EndGlobalSection
+EndGlobal
