@@ -1,7 +1,9 @@
 ﻿using _20_CRUD_Personas_DAL.Conexion;
 using _20_CRUD_Personas_ET;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -17,20 +19,20 @@ namespace _20_CRUD_Personas_DAL.Listados
         /// Funcion que nos devuelve un listado  de personas.
         /// </summary>
         /// <returns></returns>
-        public async Task<List<clsPersona>> getListadoPersonasDAL()
+        public async Task<ObservableCollection<clsPersona>> getListadoPersonasDAL()
         {
             clsMyConnection miConexion;
-            List<clsPersona> listadoPersonas;
+            ObservableCollection<clsPersona> listadoPersonas;
             String resultado;
 
             HttpClient httpClient = new HttpClient();
             miConexion = new clsMyConnection();
-            listadoPersonas = new List<clsPersona>();
+            listadoPersonas = new ObservableCollection<clsPersona>();
 
             try
             {
                 resultado = await httpClient.GetStringAsync(miConexion.miUri);
-                listadoPersonas = JsonConvert.DeserializeObject<List<clsPersona>>
+                listadoPersonas = JsonConvert.DeserializeObject<ObservableCollection<clsPersona>>(resultado);
             }
 
             catch (SqlException exSql)

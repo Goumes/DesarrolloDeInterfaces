@@ -1,9 +1,11 @@
 ﻿using _20_CRUD_Personas_DAL.Conexion;
 using _20_CRUD_Personas_ET;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -74,27 +76,23 @@ namespace _20_CRUD_Personas_DAL.Manejadoras
 
         }
 
-        public int updatePersonaDAL(clsPersona persona)
+        public async Task<bool> updatePersonaDAL(clsPersona persona)
         {
+            clsMyConnection miConexion;
+            HttpResponseMessage respuesta;
+            StringContent queryString;
+            String personaSerializada;
+            personaSerializada = JsonConvert.SerializeObject(persona);
+            queryString = new StringContent(personaSerializada, Encoding.UTF8, "application/json");
 
-            SqlConnection conexion;
-            SqlCommand miComando = new SqlCommand();
-            clsMyConnection miConexion = new clsMyConnection(); ;
-            int resultado = 0;
-            miComando.CommandText = "UPDATE personas SET nombre=@nombre, apellidos=@apellidos, fechaNac=@fechaNac, direccion=@direccion, telefono=@telefono, idDepartamento=@idDepartamento WHERE IDPersona = @idPersona";
-            miComando.Parameters.Add("@idPersona", System.Data.SqlDbType.Int).Value = persona.idPersona;
-            miComando.Parameters.Add("@nombre", System.Data.SqlDbType.VarChar).Value = persona.nombre;
-            miComando.Parameters.Add("@apellidos", System.Data.SqlDbType.VarChar).Value = persona.apellidos;
-            miComando.Parameters.Add("@fechaNac", System.Data.SqlDbType.DateTime).Value = persona.fechaNac;
-            miComando.Parameters.Add("@direccion", System.Data.SqlDbType.VarChar).Value = persona.direccion;
-            miComando.Parameters.Add("@telefono", System.Data.SqlDbType.VarChar).Value = persona.telefono;
-            miComando.Parameters.Add("@idDepartamento", System.Data.SqlDbType.Int).Value = persona.idDepartamento;
+
+            HttpClient httpClient = new HttpClient();
+            miConexion = new clsMyConnection();
+
 
             try
             {
-                conexion = miConexion.getConnection();
-                miComando.Connection = conexion;
-                resultado = miComando.ExecuteNonQuery();
+                respuesta = await httpClient.PutAsync(miConexion.miUri + "/"+persona.idPersona, queryString);
             }
 
             catch (Exception exSql)
@@ -102,24 +100,20 @@ namespace _20_CRUD_Personas_DAL.Manejadoras
                 throw exSql;
             }
 
-
-            return resultado;
+            return respuesta.IsSuccessStatusCode;
         }
 
-        public int deletePersona(int id)
+        public async Task<bool> deletePersona(int id)
         {
-            SqlConnection conexion;
-            SqlCommand miComando = new SqlCommand();
-            clsMyConnection miConexion = new clsMyConnection(); ;
-            int resultado = 0;
-            miComando.CommandText = "DELETE FROM personas WHERE IDPersona = @idPersona";
-            miComando.Parameters.Add("@idPersona", System.Data.SqlDbType.Int).Value = id;
+            clsMyConnection miConexion;
+            HttpResponseMessage respuesta;
+
+            HttpClient httpClient = new HttpClient();
+            miConexion = new clsMyConnection();
 
             try
             {
-                conexion = miConexion.getConnection();
-                miComando.Connection = conexion;
-                resultado = miComando.ExecuteNonQuery();
+                respuesta = await httpClient.DeleteAsync(miConexion.miUri + "/"+ id);
             }
 
             catch (Exception exSql)
@@ -128,30 +122,26 @@ namespace _20_CRUD_Personas_DAL.Manejadoras
             }
 
 
-            return resultado;
+            return respuesta.IsSuccessStatusCode;
         }
 
-        public int addPersonaDAL(clsPersona persona)
+        public async Task<bool> addPersonaDAL(clsPersona persona)
         {
-            int resultado = 0;
+            clsMyConnection miConexion;
+            HttpResponseMessage respuesta;
+            StringContent queryString;
+            String personaSerializada;
+            personaSerializada = JsonConvert.SerializeObject(persona);
+            queryString = new StringContent(personaSerializada, Encoding.UTF8, "application/json");
 
-            SqlConnection conexion;
-            SqlCommand miComando = new SqlCommand();
-            clsMyConnection miConexion = new clsMyConnection(); ;
-            miComando.CommandText = "INSERT INTO personas (nombre, apellidos, fechaNac, direccion, telefono, idDepartamento) VALUES (@nombre, @apellidos, @fechaNac, @direccion, @telefono, @idDepartamento)";
-            miComando.Parameters.Add("@nombre", System.Data.SqlDbType.VarChar).Value = persona.nombre;
-            miComando.Parameters.Add("@apellidos", System.Data.SqlDbType.VarChar).Value = persona.apellidos;
-            miComando.Parameters.Add("@fechaNac", System.Data.SqlDbType.Date).Value = persona.fechaNac;
-            miComando.Parameters.Add("@direccion", System.Data.SqlDbType.VarChar).Value = persona.direccion;
-            miComando.Parameters.Add("@telefono", System.Data.SqlDbType.VarChar).Value = persona.telefono;
-            miComando.Parameters.Add("@idDepartamento", System.Data.SqlDbType.Int).Value = 2;
+
+            HttpClient httpClient = new HttpClient();
+            miConexion = new clsMyConnection();
 
 
             try
             {
-                conexion = miConexion.getConnection();
-                miComando.Connection = conexion;
-                resultado = miComando.ExecuteNonQuery();
+                respuesta = await httpClient.PostAsync (miConexion.miUri, queryString);
             }
 
             catch (Exception exSql)
@@ -159,7 +149,7 @@ namespace _20_CRUD_Personas_DAL.Manejadoras
                 throw exSql;
             }
 
-            return resultado;
+            return respuesta.IsSuccessStatusCode;
         }
 
         #endregion

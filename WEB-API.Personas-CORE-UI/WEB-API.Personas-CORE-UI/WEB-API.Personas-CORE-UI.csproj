@@ -5,6 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Properties\PublishProfiles\apiPersonas-CORE - Web Deploy.pubxml" />
+    <None Remove="Properties\PublishProfiles\CRUDPersonas2 - Web Deploy.pubxml" />
     <None Remove="Properties\PublishProfiles\WEB-APIPersonas-CORE-UI - Web Deploy.pubxml" />
   </ItemGroup>
 

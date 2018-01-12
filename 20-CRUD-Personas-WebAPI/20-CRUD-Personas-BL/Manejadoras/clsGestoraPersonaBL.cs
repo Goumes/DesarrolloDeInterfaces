@@ -20,30 +20,30 @@ using System.Threading.Tasks;
             return persona;
         }
 
-        public int getGuardarPersona(clsPersona persona)
+        public async Task<bool> getGuardarPersona(clsPersona persona)
         {
-            int resultado = 0;
+            bool resultado = false;
             clsGestoraPersonaDAL gestoraPersonaDAL = new clsGestoraPersonaDAL();
-            resultado = gestoraPersonaDAL.updatePersonaDAL(persona);
+            resultado = await gestoraPersonaDAL.updatePersonaDAL(persona);
                         
             return resultado;
         }
 
-        public int getBorrarPersona(int id)
+        public async Task <bool> getBorrarPersona(int id)
         {
-            int resultado = 0;
+            bool resultado = false;
             clsGestoraPersonaDAL gestoraPersonaDAL = new clsGestoraPersonaDAL();
-            resultado = gestoraPersonaDAL.deletePersona(id);
+            resultado = await gestoraPersonaDAL.deletePersona(id);
 
             return resultado;
         }
 
-        public int getAddPersona (clsPersona persona)
+        public async Task<bool> getAddPersona (clsPersona persona)
         {
-            int resultado = 0;
+            bool resultado = false;
 
             clsGestoraPersonaDAL gestoraPersonaDAL = new clsGestoraPersonaDAL();
-            resultado = gestoraPersonaDAL.addPersonaDAL(persona);
+            resultado = await gestoraPersonaDAL.addPersonaDAL(persona);
 
             return resultado;
         }

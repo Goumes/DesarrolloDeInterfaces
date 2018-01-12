@@ -30,10 +30,10 @@ namespace _20_CRUD_Personas_UI.ViewModels
         #region "Constructores"
         public clsMainPageVM()
         {
-            clsListadoPersonasBL listadoPersonasBL = new clsListadoPersonasBL();
-            _listadoPersonas = new ObservableCollection <clsPersona> (listadoPersonasBL.getListadoPersonasBL());
+            
             _listadoAuxiliar = _listadoPersonas;
             _textoBusqueda = "";
+            generarListado();
             DispatcherTimerSample();
         }
         #endregion
@@ -165,6 +165,15 @@ namespace _20_CRUD_Personas_UI.ViewModels
         #endregion
 
         #region Metodos
+
+        public async void generarListado()
+        {
+            clsListadoPersonasBL listadoPersonasBL = new clsListadoPersonasBL();
+            _listadoPersonas = await listadoPersonasBL.getListadoPersonasBL();
+            _listadoAuxiliar = _listadoPersonas;
+            NotifyPropertyChanged("listadoAuxiliar");
+        }
+
         /// <summary>
         /// Metodo dedicado a comprobar si se puede borrar un item
         /// </summary>
@@ -215,21 +224,22 @@ namespace _20_CRUD_Personas_UI.ViewModels
         /// <summary>
         /// Metodo dedicado a guardar una nueva persona creada
         /// </summary>
-        public void save()
+        public async void save()
         {
+            clsGestoraPersonaBL gestoraPersonaBL = new clsGestoraPersonaBL();
+            clsListadoPersonasBL listadoPersonasBL = new clsListadoPersonasBL();
             if (_personaSeleccionada.idPersona == 0)
             {
-                /*
-                _personaSeleccionada.idPersona = listado.ElementAt(listado.Count - 1).idPersona + 1;
-                NotifyPropertyChanged("personaSeleccionada");
-                listado.Add(_personaSeleccionada);
-                NotifyPropertyChanged("listado");
-                */
-                clsGestoraPersonaBL gestoraPersonaBL = new clsGestoraPersonaBL();
-                clsListadoPersonasBL listadoPersonasBL = new clsListadoPersonasBL();
                 //_personaSeleccionada.idPersona = _listadoAuxiliar.ElementAt(listado.Count - 1).idPersona + 1;
-                gestoraPersonaBL.getAddPersona(_personaSeleccionada);
-                _listadoAuxiliar = new ObservableCollection<clsPersona>(listadoPersonasBL.getListadoPersonasBL());
+                await gestoraPersonaBL.getAddPersona(_personaSeleccionada);
+                _listadoAuxiliar = await listadoPersonasBL.getListadoPersonasBL();
+                NotifyPropertyChanged("listadoAuxiliar");
+            }
+
+            else
+            {
+                await gestoraPersonaBL.getGuardarPersona(_personaSeleccionada);
+                _listadoAuxiliar = await listadoPersonasBL.getListadoPersonasBL();
                 NotifyPropertyChanged("listadoAuxiliar");
             }
         }
@@ -246,10 +256,10 @@ namespace _20_CRUD_Personas_UI.ViewModels
         /// <summary>
         /// Metodo que actualiza la lista
         /// </summary>
-        public void update()
+        public async void update()
         {
             clsListadoPersonasBL listadoPersonasBL = new clsListadoPersonasBL();
-            _listadoAuxiliar = new ObservableCollection<clsPersona>(listadoPersonasBL.getListadoPersonasBL());
+            _listadoAuxiliar = await listadoPersonasBL.getListadoPersonasBL();
             NotifyPropertyChanged("listadoAuxiliar");
         }
 
@@ -314,8 +324,8 @@ namespace _20_CRUD_Personas_UI.ViewModels
             if ((int)result.Id == 0)
             {
 
-                gestoraPersonaBL.getBorrarPersona(personaSeleccionada.idPersona);
-                _listadoAuxiliar = new ObservableCollection<clsPersona>(listadoPersonasBL.getListadoPersonasBL());
+                await gestoraPersonaBL.getBorrarPersona(personaSeleccionada.idPersona);
+                _listadoAuxiliar = await listadoPersonasBL.getListadoPersonasBL();
                 NotifyPropertyChanged("listadoAuxiliar");
             }
 

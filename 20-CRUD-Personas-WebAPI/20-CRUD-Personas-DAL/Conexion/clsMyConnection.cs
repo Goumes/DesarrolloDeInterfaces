@@ -29,7 +29,7 @@ namespace _20_CRUD_Personas_DAL.Conexion
             this.pass = "123";
             //this.pass = "Password123";
 
-            miUri = new Uri ("personasbdserver.database.windows.net");
+            miUri = new Uri ("https://crud-apiweb.azurewebsites.net/api/personas");
 
         }
         //Con parámetros por si quisiera cambiar las conexiones
