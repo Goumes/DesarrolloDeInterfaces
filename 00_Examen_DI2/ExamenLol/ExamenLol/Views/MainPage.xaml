@@ -1,0 +1,99 @@
+﻿<Page
+    x:Class="ExamenLol.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ExamenLol"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="using:ExamenLol.ViewModels"
+    xmlns:data="using:ExamenLol.Models"
+    mc:Ignorable="d">
+
+    <Page.DataContext>
+        <vm:clsMainPageVM/>
+    </Page.DataContext>
+
+    <Grid Style="{StaticResource fondo}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="3*"/>
+        </Grid.RowDefinitions>
+        
+        
+        <!--Personajes-->
+        <GridView Name="gvPersonajes" Grid.Row="0" SelectedItem="{Binding Path=personajeSelecionado, Mode=TwoWay}" ItemsSource="{Binding listaPersonajes, UpdateSourceTrigger=PropertyChanged}">
+            <GridView.ItemTemplate>
+                <DataTemplate>
+                    <Image MaxHeight="120" Source="{Binding imagenPerfil}"/>                    
+                </DataTemplate>
+            </GridView.ItemTemplate>
+        </GridView>        
+        
+        <!--Detalles-->
+        <Grid Grid.Row="1" DataContext="{Binding personajeSelecionado, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1.5*"/>
+                <RowDefinition Height="4*"/>
+            </Grid.RowDefinitions>
+            
+                
+                <!--Foto y nombre-->
+                <StackPanel Orientation="Horizontal">
+                    <Image Name="imgPersonaje" Source="{Binding imagenPerfil}" Margin="5"/>
+                    <TextBlock Name="txtPersonaje" Text="{Binding nombre}" FontSize="30" VerticalAlignment="Center" Margin="5"/>
+                    <TextBlock  Text=":"  FontSize="30" VerticalAlignment="Center"/>
+                    <TextBlock Name="txtAlias" Text="{Binding alias}" FontSize="30" VerticalAlignment="Center" Margin="5"/>
+                    
+                </StackPanel>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <!--Galería-->
+                <FlipView Grid.Row="1" ItemsSource="{Binding fotos}">
+                    <FlipView.ItemTemplate>
+                        <DataTemplate>
+                            <Image Source="{Binding}" />
+                        </DataTemplate>
+                    </FlipView.ItemTemplate>
+                </FlipView>
+            
+
+            <!--Datos-->
+            <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Vertical">                
+               
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Vida:" FontSize="25" />
+                    <ProgressBar Name="pbVida"  Width="250" Height="10" Margin="5" Value="{Binding vida}"  ValueChanged="ProgressBar_ValueChanged"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Regeneración:" FontSize="25" />
+                    <ProgressBar Name="pbRegeneracion" Width="250" Height="10" Margin="5" Value="{Binding regeneracion}" ValueChanged="ProgressBar_ValueChanged"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Daño:" FontSize="20" />
+                    <ProgressBar Width="250" Height="10" Margin="5" Value="{Binding danno}" ValueChanged="ProgressBar_ValueChanged"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Armadura:" FontSize="20"/>
+                    <ProgressBar Width="250" Height="10" Margin="5" Value="{Binding armadura}" ValueChanged="ProgressBar_ValueChanged"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Velocidad de ataque:" FontSize="20" />
+                    <ProgressBar Width="250" Height="10" Margin="5" Value="{Binding velAtaque}"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Velocidad de movimiento:" FontSize="20"/>
+                    <ProgressBar Width="250" Height="10" Margin="5" Value="{Binding velMovimiento}"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Resistencia:" FontSize="20"/>
+                    <ProgressBar  Width="250" Height="10" Margin="5" Value="{Binding resistencia}"/>
+                </StackPanel>
+                
+            </StackPanel>
+            </Grid>
+        </Grid>
+    </Grid>
+</Page>

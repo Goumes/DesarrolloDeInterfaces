@@ -1,0 +1,54 @@
+﻿using ExamenLol.ViewModels;
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
+using System.Linq;
+using System.Runtime.InteropServices.WindowsRuntime;
+using Windows.Foundation;
+using Windows.Foundation.Collections;
+using Windows.UI.Xaml;
+using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Controls.Primitives;
+using Windows.UI.Xaml.Data;
+using Windows.UI.Xaml.Input;
+using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Media.Animation;
+using Windows.UI.Xaml.Navigation;
+
+// La plantilla de elemento Página en blanco está documentada en http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
+
+namespace ExamenLol
+{
+    /// <summary>
+    /// Página vacía que se puede usar de forma independiente o a la que se puede navegar dentro de un objeto Frame.
+    /// </summary>
+    public sealed partial class MainPage : Page
+    {
+        public clsMainPageVM ViewModel { get; }
+
+        public MainPage()
+        {
+            this.InitializeComponent();
+            this.ViewModel = (clsMainPageVM) this.DataContext;            
+        }
+
+        private void animarBarra(ProgressBar pb, double valor)
+        {         
+            
+
+            Storyboard storyboard = new Storyboard();
+
+            DoubleAnimation animacion = new DoubleAnimation();
+
+            animacion.EnableDependentAnimation = true;
+            
+            animacion.From = 0;            
+            animacion.To = valor;
+            animacion.Duration = new Duration(TimeSpan.FromMilliseconds(1000));
+            Storyboard.SetTarget(animacion, pb); Storyboard.SetTargetProperty(animacion, "ProgressBar.Value");                    
+            storyboard.Children.Add(animacion);
+            storyboard.Begin();
+        }
+    }
+}

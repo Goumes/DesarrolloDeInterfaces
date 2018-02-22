@@ -1,0 +1,87 @@
+﻿<Page
+    x:Class="ExamenSegundaEvaluacion_Dani.Views.Details"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ExamenSegundaEvaluacion_Dani.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="using:ExamenSegundaEvaluacion_Dani.ViewModel"
+    mc:Ignorable="d">
+
+    <Page.DataContext>
+        <vm:clsMainPageVM/>
+    </Page.DataContext>
+    
+    
+    
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" DataContext="{Binding Path=personaje}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="AUTO"/>
+            <RowDefinition Height="AUTO"/>
+            <RowDefinition Height="AUTO"/>
+            <RowDefinition Height="AUTO"/>
+            
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0">
+            <TextBlock Text="Nombre: "></TextBlock>
+            <TextBlock Text="{Binding Path=nombre, Mode=TwoWay, UpdateSourceTrigger=Explicit}"></TextBlock>
+        </StackPanel>
+        
+        <StackPanel Grid.Row="1">
+            <TextBlock Text="Alias: "></TextBlock>
+            <TextBlock Text="{Binding alias}">
+                
+                
+            </TextBlock>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2">
+            <TextBlock Text="Vida:"></TextBlock>
+            <ProgressBar Value="{Binding vida}" HorizontalAlignment="Left" Width="250" MinHeight="10" Maximum="650" Minimum="0"></ProgressBar>
+
+            <TextBlock Text="Armadura: "></TextBlock>
+            <ProgressBar Value="{Binding armadura}" HorizontalAlignment="Left" MinHeight="10" Width="250" Maximum="30" Minimum="0"></ProgressBar>
+
+            <TextBlock Text="Velocidad: "></TextBlock>
+            <ProgressBar Value="{Binding velMovimiento}" HorizontalAlignment="Left" MinHeight="10" Width="250" Maximum="400" Minimum="0"></ProgressBar>
+
+            <TextBlock Text="Velocidad de ataque: "></TextBlock>
+            <ProgressBar Value="{Binding velAtaque}" HorizontalAlignment="Left" MinHeight="10" Width="250" Maximum="1" Minimum="0"></ProgressBar>
+
+            <TextBlock Text="Regeneracion: "></TextBlock>
+            <ProgressBar Value="{Binding regeneracion}" HorizontalAlignment="Left" MinHeight="10" Width="250" Maximum="10" Minimum="0"></ProgressBar>
+
+            <TextBlock Text="Daño: "></TextBlock>
+            <ProgressBar Value="{Binding danno}" HorizontalAlignment="Left" Width="250" MinHeight="10" Maximum="75" Minimum="0"></ProgressBar>
+
+            <TextBlock Text="Resistencia: "></TextBlock>
+            <ProgressBar HorizontalAlignment="Left" Width="250" MinHeight="10" Maximum="50" Minimum="0" Value="{Binding resistencia}"></ProgressBar>
+
+        </StackPanel>
+
+        <StackPanel Grid.Row="3" >
+            <FlipView Grid.Row="1" Grid.Column="0" ItemsSource="{Binding skins }" 
+                      SelectedIndex="{Binding SelectedIndex, ElementName=companiesFlipView}" VerticalAlignment="Bottom" 
+                      
+                      HorizontalAlignment="Center" Margin="0,10">
+                <FlipView.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel Orientation="Horizontal">
+                        </StackPanel>
+                    </ItemsPanelTemplate>
+                </FlipView.ItemsPanel>
+                <FlipView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Image Source="{Binding}" MaxWidth="200" MaxHeight="200"></Image>
+                        </Grid>
+                    </DataTemplate>
+                </FlipView.ItemTemplate>
+            </FlipView>
+
+
+        </StackPanel>
+        
+    </Grid>
+</Page>
