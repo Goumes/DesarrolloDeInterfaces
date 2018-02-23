@@ -77,8 +77,6 @@ namespace ExamenSegundaEvaluacion_Dani.ViewModel
 
             clsListadoPersonajes clp = new clsListadoPersonajes();
             lista =await clp.getPersonajes();
-
-            
             
         }
 

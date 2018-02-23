@@ -56,7 +56,6 @@ namespace ExamenSegundaEvaluacion_Dani.DAL
 
         private Uri asignafoto(string nombre)
         {
-
             Uri u = new Uri("ms-appx://ExamenSegundaEvaluacion-Dani/Assets/Imagenes/" + nombre + ".png", UriKind.RelativeOrAbsolute);
             return u;
         }
