@@ -1,0 +1,26 @@
+<StackPanel Orientation="Horizontal" x:Name="stack">
+        <StackPanel.Resources>
+            <local:NegatingConverter x:Key="NegatingConverter" />
+            <Storyboard x:Key="slide">
+                <DoubleAnimation From="0" To="{Binding Width, ElementName=canvas}" Duration="00:00:10"
+                      Storyboard.TargetProperty="X"
+                      Storyboard.TargetName="transferCurreny"
+                      RepeatBehavior="Forever"/>
+            </Storyboard>
+        </StackPanel.Resources>
+        <StackPanel.RenderTransform>
+            <TranslateTransform x:Name="transferCurreny" X="0"/>
+        </StackPanel.RenderTransform>
+        <StackPanel.Triggers>
+            <EventTrigger RoutedEvent="StackPanel.Loaded">
+                <BeginStoryboard Storyboard="{StaticResource slide}" />
+            </EventTrigger>
+            <EventTrigger RoutedEvent="StackPanel.SizeChanged">
+                <BeginStoryboard Storyboard="{StaticResource slide}" />
+            </EventTrigger>
+        </StackPanel.Triggers>
+        <Canvas x:Name="canvas" Width="{Binding ActualWidth, ElementName=stack}">
+            <TextBlock Text="StackOverflow" FontSize="25"  x:Name="txtKron" Canvas.Left="0"/>
+            <TextBlock Text="{Binding Text, ElementName=txtKron}" FontSize="25" Canvas.Left="{Binding Width, ElementName=canvas, Converter={StaticResource NegatingConverter}}"/>
+        </Canvas>
+    </StackPanel>
